@@ -1,0 +1,39 @@
+##### DRY RUN #####
+
+recommender:
+  dry_run: false #outputs a list of artists to add without adding to Lidarr
+
+##### MUSICBRAINZ CONFIG #####
+
+musicbrainz:
+  musicbrainz_url: "https://musicbrainz.org" # Default https://musicbrainz.org but use self hosted instance if you have it!
+
+##### LISTENBRAINZ CONFIG ####
+
+listenbrainz:
+  user_token: "xxx" #from here https://listenbrainz.org/settings/
+  username: "xxx"
+
+  #Recommend lists
+  collaborative-filtering: true #Suggestions based on your plays v.s. coparible users
+  weekly-exploration: true #uses the weekly exploration playlist https://listenbrainz.org/user/chris41304130/recommendations/ which includes diversity suggestions
+
+
+##### LIDARR CONFIG ####
+
+lidarr:
+  enabled: true
+  url: "https://192.168.1.3:8686"
+  api_key: "xxx"
+
+  root_folder: "/root/music"
+
+  quality_profile: "Any"
+  metadata_profile: "Album Ep"
+
+  monitor_existing: "all"     # UI: Monitor
+  monitor_new: "all"          # UI: Monitor New Albums
+  search_on_add: true        # UI: Start search for missing albums
+
+  tags:
+    - "scoutarr-fm" #tag to be entered in Lidarr 

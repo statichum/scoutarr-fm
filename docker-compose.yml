@@ -1,0 +1,7 @@
+services:
+  scoutarr:
+    image: ghcr.io/yourusername/scoutarr-fm:latest
+    container_name: scoutarr-fm
+    volumes:
+      - ./config.yaml:/config/config.yaml:ro
+    restart: "no"
