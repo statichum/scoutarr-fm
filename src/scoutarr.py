@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import socket
+socket.has_ipv6 = False
+
 import sys
 import time
 import yaml
