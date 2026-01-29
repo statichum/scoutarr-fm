@@ -3,5 +3,5 @@ services:
     image: ghcr.io/statichum/scoutarr-fm:latest
     container_name: scoutarr-fm
     volumes:
-      - ./config.yaml:/config/config.yaml:ro
+      - ./config/:/config/
     restart: "no"

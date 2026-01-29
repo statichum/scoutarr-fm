@@ -5,325 +5,202 @@ socket.has_ipv6 = False
 
 import sys
 import time
+import glob
 import yaml
-import requests
 from pathlib import Path
-from collections import defaultdict
+from typing import Dict, Any, List, Optional
 
-# --------------------------------------------------
-# Paths / Constants
-# --------------------------------------------------
+from listenbrainz_core import (
+    lb_get_weekly_exploration_playlists,
+    lb_get_playlist,
+    lb_extract_artists_from_playlist,
+    lb_extract_tracks_from_playlist,
+    lb_get_cf_artists,
+)
+from lidarr_sidecar import lidarr_run_import
 
-CONFIG_PATH = Path("/config/config.yaml")
-if not CONFIG_PATH.exists():
-    CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
 
-USER_AGENT = "scoutarr.fm/0.5 (christuckey.uk)"
+USER_AGENT = "scoutarr.fm/0.6 (christuckey.uk)"
 
-LB_CF_RECORDING = "https://api.listenbrainz.org/1/cf/recommendation/user"
-LB_CREATED_FOR = "https://api.listenbrainz.org/1/user/{user}/playlists/createdfor"
-LB_PLAYLIST = "https://api.listenbrainz.org/1/playlist"
+CONFIG_DIR = Path("/config")
+FALLBACK_CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
-# --------------------------------------------------
-# Helpers
-# --------------------------------------------------
 
-def log(msg):
+def log(msg: str):
     print(msg, flush=True)
 
 
-def load_config():
-    if not CONFIG_PATH.exists():
-        log("✗ Config file not found")
-        sys.exit(1)
-    with open(CONFIG_PATH) as f:
-        return yaml.safe_load(f)
+def load_yaml(path: Path) -> Dict[str, Any]:
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
 
 
-def lb_headers(token):
-    return {
-        "Authorization": f"Token {token}",
-        "User-Agent": USER_AGENT,
-    }
+def list_config_files() -> List[Path]:
+    # Prefer mounted /config
+    if CONFIG_DIR.exists():
+        files = sorted(Path(p) for p in glob.glob(str(CONFIG_DIR / "*.y*ml")))
+        if files:
+            return files
+
+    # Fallback to repo local /config (handy for non-docker runs)
+    if FALLBACK_CONFIG_DIR.exists():
+        files = sorted(Path(p) for p in glob.glob(str(FALLBACK_CONFIG_DIR / "*.y*ml")))
+        if files:
+            return files
+
+    return []
 
 
-def mb_base(cfg):
-    base = cfg.get("musicbrainz", {}).get(
-        "musicbrainz_url",
-        "https://musicbrainz.org"
-    ).rstrip("/")
-    return f"{base}/ws/2"
+def enabled(cfg: Dict[str, Any], *keys, default=False) -> bool:
+    cur = cfg
+    for k in keys:
+        if not isinstance(cur, dict) or k not in cur:
+            return default
+        cur = cur[k]
+    return bool(cur)
 
 
-# --------------------------------------------------
-# MusicBrainz helpers
-# --------------------------------------------------
+def build_week_id_from_title(title: str) -> Optional[str]:
+    """
+    LB title looks like:
+      "Weekly Exploration for chris41304130, week of 2026-01-26 Mon"
+    We’ll keep a stable "YYYY-Www" derived from the date.
+    """
+    import re
+    from datetime import date
 
-def get_primary_artist_from_recording(cfg, recording_mbid, retries=3):
-    url = f"{mb_base(cfg)}/recording/{recording_mbid}"
+    m = re.search(r"week of (\d{4}-\d{2}-\d{2})", title)
+    if not m:
+        return None
+    y, mo, d = map(int, m.group(1).split("-"))
+    iso = date(y, mo, d).isocalendar()
+    return f"{iso.year}-W{iso.week:02d}"
 
-    for attempt in range(1, retries + 1):
-        try:
-            r = requests.get(
-                url,
-                params={"inc": "artist-credits", "fmt": "json"},
-                headers={"User-Agent": USER_AGENT},
-                timeout=10,
-            )
-            r.raise_for_status()
-            data = r.json()
-
-            if not data.get("artist-credit"):
-                return None
-
-            artist = data["artist-credit"][0]["artist"]
-            return {
-                "name": artist["name"],
-                "mbid": artist["id"],
-            }
-
-        except Exception:
-            log(f"⚠ MB lookup {recording_mbid} failed (retry {attempt}/{retries})")
-            time.sleep(0.5)
-
-    return None
-
-
-# --------------------------------------------------
-# Weekly Exploration
-# --------------------------------------------------
-
-def get_weekly_exploration_artists(cfg):
-    token = cfg["listenbrainz"]["user_token"]
-    user = cfg["listenbrainz"]["username"]
-
-    log("→ Fetching Weekly Exploration playlist")
-
-    r = requests.get(
-        LB_CREATED_FOR.format(user=user),
-        headers=lb_headers(token),
-        timeout=20,
-    )
-    r.raise_for_status()
-
-    playlists = r.json().get("playlists", [])
-    weekly = None
-
-    for p in playlists:
-        meta = (
-            p["playlist"]["extension"]
-            .get("https://musicbrainz.org/doc/jspf#playlist", {})
-            .get("additional_metadata", {})
-            .get("algorithm_metadata", {})
-        )
-        if meta.get("source_patch") == "weekly-exploration":
-            weekly = p["playlist"]
-            break
-
-    if not weekly:
-        log("⚠ Weekly Exploration playlist not found")
-        return []
-
-    playlist_id = weekly["identifier"].split("/")[-1]
-
-    r = requests.get(
-        f"{LB_PLAYLIST}/{playlist_id}",
-        headers=lb_headers(token),
-        timeout=20,
-    )
-    r.raise_for_status()
-
-    artists = []
-
-    for track in r.json()["playlist"]["track"]:
-        meta = track["extension"]["https://musicbrainz.org/doc/jspf#track"]
-        for artist in meta.get("additional_metadata", {}).get("artists", []):
-            if artist.get("artist_mbid"):
-                artists.append({
-                    "name": artist["artist_credit_name"],
-                    "mbid": artist["artist_mbid"],
-                    "source": "weekly-exploration",
-                })
-
-    return artists
-
-
-# --------------------------------------------------
-# Collaborative Filtering
-# --------------------------------------------------
-
-def get_cf_artists(cfg):
-    token = cfg["listenbrainz"]["user_token"]
-    user = cfg["listenbrainz"]["username"]
-
-    log("→ Fetching CF recommended recordings")
-
-    r = requests.get(
-        f"{LB_CF_RECORDING}/{user}/recording",
-        headers=lb_headers(token),
-        params={"count": 100},
-        timeout=20,
-    )
-    r.raise_for_status()
-
-    recordings = r.json()["payload"]["mbids"]
-    artists = []
-
-    for item in recordings:
-        artist = get_primary_artist_from_recording(cfg, item["recording_mbid"])
-        if artist:
-            artists.append({
-                "name": artist["name"],
-                "mbid": artist["mbid"],
-                "source": "collaborative-filtering",
-            })
-        time.sleep(0.2)
-
-    return artists
-
-
-# --------------------------------------------------
-# Lidarr helpers
-# --------------------------------------------------
-
-def lidarr_headers(cfg):
-    return {
-        "X-Api-Key": cfg["lidarr"]["api_key"],
-        "User-Agent": USER_AGENT,
-    }
-
-
-def lidarr_get(cfg, path):
-    r = requests.get(
-        f'{cfg["lidarr"]["url"]}/api/v1/{path}',
-        headers=lidarr_headers(cfg),
-        timeout=20,
-    )
-    r.raise_for_status()
-    return r.json()
-
-
-def lidarr_lookup_artist(cfg, mbid):
-    r = requests.get(
-        f'{cfg["lidarr"]["url"]}/api/v1/artist/lookup',
-        headers=lidarr_headers(cfg),
-        params={"term": f"mbid:{mbid}"},
-        timeout=20,
-    )
-    r.raise_for_status()
-    data = r.json()
-    return data[0] if data else None
-
-
-def resolve_lidarr_ids(cfg):
-    qp = lidarr_get(cfg, "qualityprofile")
-    mp = lidarr_get(cfg, "metadataprofile")
-    tags = lidarr_get(cfg, "tag")
-
-    qp_id = next(x["id"] for x in qp if x["name"] == cfg["lidarr"]["quality_profile"])
-    mp_id = next(x["id"] for x in mp if x["name"] == cfg["lidarr"]["metadata_profile"])
-    tag_ids = [
-        t["id"] for t in tags if t["label"] in cfg["lidarr"].get("tags", [])
-    ]
-
-    return qp_id, mp_id, tag_ids
-
-
-def lidarr_add_artist(cfg, artist, qp_id, mp_id, tag_ids):
-    payload = {
-        "artistName": artist["artistName"],
-        "foreignArtistId": artist["foreignArtistId"],
-        "qualityProfileId": qp_id,
-        "metadataProfileId": mp_id,
-        "rootFolderPath": cfg["lidarr"]["root_folder"],
-        "monitored": True,
-        "monitorNewItems": cfg["lidarr"]["monitor_new"],
-        "tags": tag_ids,
-        "addOptions": {
-            "monitor": cfg["lidarr"]["monitor_existing"],
-            "searchForMissingAlbums": cfg["lidarr"]["search_on_add"],
-        },
-    }
-
-    r = requests.post(
-        f'{cfg["lidarr"]["url"]}/api/v1/artist',
-        headers=lidarr_headers(cfg),
-        json=payload,
-        timeout=30,
-    )
-    r.raise_for_status()
-
-
-# --------------------------------------------------
-# Main
-# --------------------------------------------------
 
 def main():
-    log("\nscoutarr.fm — Playlist + CF Edition\n")
+    log("\nscoutarr.fm — Core + Sidecars\n")
 
-    cfg = load_config()
-    dry_run = cfg.get("recommender", {}).get("dry_run", True)
+    cfg_files = list_config_files()
+    if not cfg_files:
+        log("✗ No config files found in /config (or ./config fallback).")
+        sys.exit(1)
 
-    weekly_enabled = cfg["listenbrainz"].get("weekly-exploration", False)
-    cf_enabled = cfg["listenbrainz"].get("collaborative-filtering", False)
+    log(f"→ Found {len(cfg_files)} config file(s)\n")
 
-    artist_pool = defaultdict(lambda: {
-        "name": None,
-        "count": 0,
-        "sources": set(),
-    })
+    for cfg_path in cfg_files:
+        log("=" * 80)
+        log(f"Config: {cfg_path.name}")
+        log("=" * 80)
 
-    if weekly_enabled:
-        for a in get_weekly_exploration_artists(cfg):
-            e = artist_pool[a["mbid"]]
-            e["name"] = a["name"]
-            e["count"] += 1
-            e["sources"].add(a["source"])
+        cfg = load_yaml(cfg_path)
+        dry_run = cfg.get("recommender", {}).get("dry_run", True)
 
-    if cf_enabled:
-        for a in get_cf_artists(cfg):
-            e = artist_pool[a["mbid"]]
-            e["name"] = a["name"]
-            e["count"] += 1
-            e["sources"].add(a["source"])
+        # Decide what we need to fetch from ListenBrainz
+        lidarr_enabled = enabled(cfg, "lidarr", "enabled", default=False)
+        plex_enabled = enabled(cfg, "plex", "enabled", default=False)
 
-    ranked = sorted(
-        artist_pool.items(),
-        key=lambda x: x[1]["count"],
-        reverse=True,
-    )
+        weekly_enabled = enabled(cfg, "listenbrainz", "weekly-exploration", default=False)
+        cf_enabled = enabled(cfg, "listenbrainz", "collaborative-filtering", default=False)
 
-    log(f"\nFinal artist list: {len(ranked)}")
+        need_current_week = lidarr_enabled and weekly_enabled
+        need_prev_week = plex_enabled and cfg.get("plex", {}).get("last-week-exp", False)
 
-    if dry_run:
-        log("\nDRY RUN — no Lidarr changes will be made\n")
-        for i, (mbid, data) in enumerate(ranked, 1):
-            log(f"{i:>3}. {data['name']}")
-            log(f"     MBID    : {mbid}")
-            log(f"     Hits    : {data['count']}")
-            log(f"     Sources : {', '.join(sorted(data['sources']))}\n")
-        return
-
-    if not cfg["lidarr"]["enabled"]:
-        log("Lidarr integration disabled")
-        return
-
-    log("\nLIVE MODE — importing into Lidarr\n")
-
-    qp_id, mp_id, tag_ids = resolve_lidarr_ids(cfg)
-
-    for mbid, data in ranked:
-        lookup = lidarr_lookup_artist(cfg, mbid)
-
-        if lookup and lookup.get("id"):
-            log(f"SKIP ✓ {data['name']}")
+        if not (need_current_week or need_prev_week or (lidarr_enabled and cf_enabled)):
+            log("→ Nothing enabled that requires ListenBrainz data (skipping).")
             continue
 
-        log(f"ADD  + {data['name']}")
-        lidarr_add_artist(cfg, lookup, qp_id, mp_id, tag_ids)
-        time.sleep(0.3)
+        # Fetch weekly exploration playlist list once (only if we need weekly)
+        weekly_list = []
+        if need_current_week or need_prev_week:
+            weekly_list = lb_get_weekly_exploration_playlists(cfg, user_agent=USER_AGENT)
+            if not weekly_list:
+                log("⚠ No Weekly Exploration playlists available for this user.")
+                # You might still want CF-only
+                if not (lidarr_enabled and cf_enabled):
+                    continue
 
-    log("\n✓ Lidarr import complete.\n")
+        # Pick current and previous playlists (newest first)
+        current_meta = weekly_list[0] if len(weekly_list) >= 1 else None
+        prev_meta = weekly_list[1] if len(weekly_list) >= 2 else None
+
+        # Shared data contract object (what sidecars consume)
+        contract: Dict[str, Any] = {
+            "config_name": cfg_path.name,
+            "dry_run": dry_run,
+            "listenbrainz": {
+                "username": cfg.get("listenbrainz", {}).get("username"),
+            },
+            "weekly": {
+                "current": None,
+                "previous": None,
+            },
+            "artists": {
+                # merged pool for Lidarr sidecar
+                # key: artist_mbid -> {name, sources:set()}
+            },
+        }
+
+        # Pull CURRENT week playlist details only if needed
+        if need_current_week and current_meta:
+            pl = lb_get_playlist(cfg, current_meta["mbid"], user_agent=USER_AGENT)
+            week_id = build_week_id_from_title(pl.get("title", "")) or "unknown-week"
+            contract["weekly"]["current"] = {
+                "mbid": current_meta["mbid"],
+                "title": pl.get("title"),
+                "week_id": week_id,
+                "tracks": lb_extract_tracks_from_playlist(pl),
+            }
+
+            # Weekly artists -> artist pool
+            weekly_artists = lb_extract_artists_from_playlist(pl, source="weekly-exploration")
+            for a in weekly_artists:
+                entry = contract["artists"].setdefault(a["mbid"], {"name": a["name"], "sources": set()})
+                entry["name"] = a["name"]
+                entry["sources"].add("weekly-exploration")
+
+            log(f"→ Weekly(current): {pl.get('title')}")
+
+        # Pull PREVIOUS week playlist details only if needed (for Plex later)
+        if need_prev_week and prev_meta:
+            pl = lb_get_playlist(cfg, prev_meta["mbid"], user_agent=USER_AGENT)
+            week_id = build_week_id_from_title(pl.get("title", "")) or "unknown-week"
+            contract["weekly"]["previous"] = {
+                "mbid": prev_meta["mbid"],
+                "title": pl.get("title"),
+                "week_id": week_id,
+                "tracks": lb_extract_tracks_from_playlist(pl),
+            }
+            log(f"→ Weekly(previous): {pl.get('title')}")
+        elif need_prev_week and not prev_meta:
+            log("⚠ Plex enabled but no 'previous week' playlist exists yet (need 2 weeks of data).")
+
+        # CF artists only if Lidarr enabled + CF enabled
+        if lidarr_enabled and cf_enabled:
+            cf_artists = lb_get_cf_artists(cfg, user_agent=USER_AGENT)
+            for a in cf_artists:
+                entry = contract["artists"].setdefault(a["mbid"], {"name": a["name"], "sources": set()})
+                entry["name"] = a["name"]
+                entry["sources"].add("collaborative-filtering")
+
+            log(f"→ CF artists: {len(cf_artists)}")
+
+        # --- Call sidecars conditionally ---
+
+        # Lidarr sidecar
+        if lidarr_enabled and contract["artists"]:
+            lidarr_run_import(cfg, contract, user_agent=USER_AGENT)
+        elif lidarr_enabled:
+            log("⚠ Lidarr enabled but artist pool is empty (nothing to import).")
+
+        # Plex sidecar placeholder (we’ll implement after Plex PoC)
+        if plex_enabled and contract["weekly"]["previous"]:
+            pl_title = contract["weekly"]["previous"]["title"]
+            log(f"→ Plex enabled: would build playlist from previous week ({pl_title})")
+            log("  (Plex sidecar not implemented yet — next step is Plex PoC.)")
+
+        log("")  # spacing between configs
+
+    log("Done.\n")
 
 
 if __name__ == "__main__":

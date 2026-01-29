@@ -31,12 +31,13 @@ Clone the repo:
 git clone https://github.com/statichum/scoutarr-fm.git
 ```
 
-Put config in place and edit:
+Config files go into the .config/ folder - Put config file(s) in place and edit:
+Note - use as many config files as you like for any nubmer of users/setups. name files however you prefer.
 
 ```bash
 cd scoutarr-fm
-cp config.yaml.example config.yaml
-nano config.yaml
+cp config.yaml.example ./config/config-1.yaml
+nano config-1.yaml
 ```
 
 First run with dry-run enabled to verify output, then disable dry-run to allow Lidarr imports.
