@@ -32,6 +32,7 @@ Name config files however you prefer, they will be used as long as theyre in con
 
 ```bash
 cd scoutarr-fm
+mkdir config
 cp config.yaml.example ./config/config-swedishgary.yaml
 cd config
 nano config-1.yaml
