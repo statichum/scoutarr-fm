@@ -35,7 +35,7 @@ cd scoutarr-fm
 mkdir config
 cp config.yaml.example ./config/config-swedishgary.yaml
 cd config
-nano config-1.yaml
+nano config-swedishgary.yaml
 ```
 
 I reccommend to first run with dry-run enabled to verify output, then disable dry-run to allow Lidarr imports.

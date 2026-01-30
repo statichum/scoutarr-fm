@@ -1,39 +1,53 @@
 ##### DRY RUN #####
 
 recommender:
-  dry_run: false #outputs a list of artists to add without adding to Lidarr
+  dry_run: true #outputs a list of artists to add without adding to Lidarr
 
 ##### MUSICBRAINZ CONFIG #####
 
 musicbrainz:
-  musicbrainz_url: "https://musicbrainz.org" # Default https://musicbrainz.org but use self hosted instance if you have it!
+  musicbrainz_url: "https://musicbrainz.org"	#Default https://musicbrainz.org but use self hosted instance if you have it!
 
 ##### LISTENBRAINZ CONFIG ####
 
 listenbrainz:
-  user_token: "xxx" #from here https://listenbrainz.org/settings/
-  username: "xxx"
+  user_token: "387df6f3-466xxxxxxxxxxxxxx"	#from here https://listenbrainz.org/settings/
+  username: "your-listenbrainz-username"	#yeah...
 
   #Recommend lists
-  collaborative-filtering: true #Suggestions based on your plays v.s. coparible users
-  weekly-exploration: true #uses the weekly exploration playlist https://listenbrainz.org/user/chris41304130/recommendations/ which includes diversity suggestions
+  collaborative-filtering: true		#Suggestions based on your plays v.s. coparible users
+  weekly-exploration: true		#uses the weekly exploration playlist https://listenbrainz.org/user/chris41304130/recommendations/ which includes diversity suggestions
 
+##### PLEX CONFIG ####
+
+plex:
+  enabled: true					#enables import of previous weeks 'weekly expolration' playlist into Plex
+  plex-token: "2tsMJxxxxxxxxxxxx"		#X-Plex token - see here https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
+  plex-username: "your-plex-username"		#It's in the name...
+  plex-url: "http://100.121.111.8:32400"	#Plex URL, must be accessible by docker container
+  plex-library: "Music"				#Library name for your music where the playlist will be created
+
+  #Playlists
+  last-week-exp: true				#creates 'Last Week’s Exploration' playlist
+  pl-retention: 6				#Number of weeks of playlists to keep
+  pl-name: "ListenBrainz Weekly Explore"	#Playlist name prefix - will be followed by the year and week number in the format ' – 2026 W27'
 
 ##### LIDARR CONFIG ####
 
 lidarr:
-  enabled: true
-  url: "https://192.168.1.3:8686"
-  api_key: "xxx"
+  enabled: true #enables additing artists to Lidarr
+  url: "http://100.121.111.8:8686"	#must be accessible by docker container
+  api_key: "e927b0647cxxxxxxxxxxxxxxx"	#Lidarr > Settings > General
 
-  root_folder: "/root/music"
+  root_folder: "/mnt/Music"		#root folder to be used in Lidarr
 
-  quality_profile: "Any"
-  metadata_profile: "Album Ep"
+  quality_profile: "Any"		#set the quality profile you want to use from Lidarr by name
+  metadata_profile: "Album"		#set the metadata profile you want to use from Lidarr by name
 
-  monitor_existing: "all"     # UI: Monitor
-  monitor_new: "all"          # UI: Monitor New Albums
-  search_on_add: true        # UI: Start search for missing albums
+  monitor_existing: "all"		#From Lidarr UI: Monitor
+  monitor_new: "all"			#From Lidarr UI: Monitor New Albums
+  search_on_add: true			#From Lidarr UI: Start search for missing albums
 
   tags:
-    - "scoutarr-fm" #tag to be entered in Lidarr 
+    - "scoutarr-fm"			#tag to be entered in Lidarr 
+
