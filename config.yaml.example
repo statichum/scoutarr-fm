@@ -1,53 +1,52 @@
 ##### DRY RUN #####
 
 recommender:
-  dry_run: true #outputs a list of artists to add without adding to Lidarr
+  dry_run: true # outputs a list of artists to add without adding to Lidarr
 
 ##### MUSICBRAINZ CONFIG #####
 
 musicbrainz:
-  musicbrainz_url: "https://musicbrainz.org"	#Default https://musicbrainz.org but use self hosted instance if you have it!
+  musicbrainz_url: "https://musicbrainz.org" # Default https://musicbrainz.org but use self hosted instance if you have it!
 
 ##### LISTENBRAINZ CONFIG ####
 
 listenbrainz:
-  user_token: "387df6f3-466xxxxxxxxxxxxxx"	#from here https://listenbrainz.org/settings/
-  username: "your-listenbrainz-username"	#yeah...
+  user_token: "387df6f3-466xxxxxxxxxxxxxx" # from here https://listenbrainz.org/settings/
+  username: "your-listenbrainz-username"   # yeah...
 
-  #Recommend lists
-  collaborative-filtering: true		#Suggestions based on your plays v.s. coparible users
-  weekly-exploration: true		#uses the weekly exploration playlist https://listenbrainz.org/user/chris41304130/recommendations/ which includes diversity suggestions
+  # Recommend lists
+  collaborative-filtering: true  # Suggestions based on your plays vs comparable users
+  weekly-exploration: true       # Uses the Weekly Exploration playlist (includes diversity suggestions)
 
 ##### PLEX CONFIG ####
 
 plex:
-  enabled: true					#enables import of previous weeks 'weekly expolration' playlist into Plex
-  plex-token: "2tsMJxxxxxxxxxxxx"		#X-Plex token - see here https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/
-  plex-username: "your-plex-username"		#It's in the name...
-  plex-url: "http://100.121.111.8:32400"	#Plex URL, must be accessible by docker container
-  plex-library: "Music"				#Library name for your music where the playlist will be created
+  enabled: true  # Enables import of previous weeks' Weekly Exploration playlist into Plex
+  plex-token: "2tsMJxxxxxxxxxxxx"  # X-Plex token
+  plex-username: "your-plex-username"
+  plex-url: "http://100.121.111.8:32400"  # Must be accessible by docker container
+  plex-library: "Music"  # Library name where the playlist will be created
 
-  #Playlists
-  last-week-exp: true				#creates 'Last Week’s Exploration' playlist
-  pl-retention: 6				#Number of weeks of playlists to keep
-  pl-name: "ListenBrainz Weekly Explore"	#Playlist name prefix - will be followed by the year and week number in the format ' – 2026 W27'
+  # Playlists
+  last-week-exp: true        # Creates 'Last Week’s Exploration' playlist
+  pl-retention: 6            # Number of weeks of playlists to keep
+  pl-name: "ListenBrainz Weekly Explore"  # Prefix, followed by ' – YYYY Www'
 
 ##### LIDARR CONFIG ####
 
 lidarr:
-  enabled: true #enables additing artists to Lidarr
-  url: "http://100.121.111.8:8686"	#must be accessible by docker container
-  api_key: "e927b0647cxxxxxxxxxxxxxxx"	#Lidarr > Settings > General
+  enabled: true  # Enables adding artists to Lidarr
+  url: "http://100.121.111.8:8686"  # Must be accessible by docker container
+  api_key: "e927b0647cxxxxxxxxxxxxxxx"  # Lidarr > Settings > General
 
-  root_folder: "/mnt/Music"		#root folder to be used in Lidarr
+  root_folder: "/mnt/Music"  # Root folder to be used in Lidarr
 
-  quality_profile: "Any"		#set the quality profile you want to use from Lidarr by name
-  metadata_profile: "Album"		#set the metadata profile you want to use from Lidarr by name
+  quality_profile: "Any"     # Quality profile name from Lidarr
+  metadata_profile: "Album"  # Metadata profile name from Lidarr
 
-  monitor_existing: "all"		#From Lidarr UI: Monitor
-  monitor_new: "all"			#From Lidarr UI: Monitor New Albums
-  search_on_add: true			#From Lidarr UI: Start search for missing albums
+  monitor_existing: "all"    # From Lidarr UI: Monitor
+  monitor_new: "all"         # From Lidarr UI: Monitor New Albums
+  search_on_add: true        # From Lidarr UI: Start search for missing albums
 
   tags:
-    - "scoutarr-fm"			#tag to be entered in Lidarr 
-
+    - "scoutarr-fm"  # Tag to be entered in Lidarr
