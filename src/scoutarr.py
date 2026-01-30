@@ -19,6 +19,7 @@ from listenbrainz_core import (
 )
 from lidarr_sidecar import lidarr_run_import
 
+from plex_sidecar import plex_run_playlists
 
 USER_AGENT = "scoutarr.fm/0.6 (christuckey.uk)"
 
@@ -192,11 +193,14 @@ def main():
         elif lidarr_enabled:
             log("⚠ Lidarr enabled but artist pool is empty (nothing to import).")
 
-        # Plex sidecar placeholder (we’ll implement after Plex PoC)
+        # Plex sidecar (previous week → Plex playlists)
         if plex_enabled and contract["weekly"]["previous"]:
-            pl_title = contract["weekly"]["previous"]["title"]
-            log(f"→ Plex enabled: would build playlist from previous week ({pl_title})")
-            log("  (Plex sidecar not implemented yet — next step is Plex PoC.)")
+            try:
+                plex_run_playlists(cfg, contract, user_agent=USER_AGENT)
+            except Exception as e:
+                log(f"✗ Plex sidecar failed: {e}")
+        elif plex_enabled:
+            log("⚠ Plex enabled but no 'previous week' playlist exists yet (need 2 weeks of data).")
 
         log("")  # spacing between configs
 

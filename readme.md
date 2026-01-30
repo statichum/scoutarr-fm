@@ -1,18 +1,12 @@
 # scoutarr.fm
 
-Scoutarr.fm pulls ListenBrainz recommendations and imports artists into Lidarr.
-
-It is designed to be:
-- deterministic (MBID-based, no fuzzy matching)
-- safe (dry-run mode by default)
-- automation-friendly (Docker + cron, no long-running container)
+Scoutarr.fm pulls ListenBrainz recommendations and imports artists into Lidarr and inserts the Weekly Explore playlist from ListenBrainz into PlexAmp 
+(uses the previous week's weekly explore so that it can take advantage of added artists and tracks being recommended)
 
 Scoutarr currently supports:
 - ListenBrainz **Weekly Exploration** playlist
 - ListenBrainz **Collaborative Filtering** recommendations
-- Optional local MusicBrainz mirror for fast, reliable lookups
-- Skipping artists already present in Lidarr
-- Adding only missing artists with configured profiles, root folder, and tags
+- Plexamp playlist insertion
 
 ---
 
@@ -20,6 +14,7 @@ Scoutarr currently supports:
 - Docker Compose
 - Lidarr + API key
 - ListenBrainz account + user token
+- Plexamp and X-Plex key
 
 ---
 
@@ -32,23 +27,25 @@ git clone https://github.com/statichum/scoutarr-fm.git
 ```
 
 Config files go into the .config/ folder - Put config file(s) in place and edit:
-Note - use as many config files as you like for any nubmer of users/setups. name files however you prefer.
+Note - use as many config files as you like for any number of users/setups. 
+Name config files however you prefer, they will be used as long as theyre in config file and have .yaml extension.
 
 ```bash
 cd scoutarr-fm
-cp config.yaml.example ./config/config-1.yaml
+cp config.yaml.example ./config/config-swedishgary.yaml
+cd config
 nano config-1.yaml
 ```
 
-First run with dry-run enabled to verify output, then disable dry-run to allow Lidarr imports.
-
+I reccommend to first run with dry-run enabled to verify output, then disable dry-run to allow Lidarr imports.
 Run once:
 
 ```bash
 docker compose run --rm scoutarr
 ```
 
-Cron example (weekly, Tuesday 09:00 local time):
+Set up Cron to run the contianer on a weekly basis:
+Cron example
 
 ```bash
 0 9 * * 2 cd /docker/scoutarr-fm && docker compose run --rm scoutarr >> logs/cron.log 2>&1

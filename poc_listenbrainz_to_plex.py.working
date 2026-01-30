@@ -1,0 +1,458 @@
+#!/usr/bin/env python3
+"""
+poc_listenbrainz_to_plex.py
+
+Fetch ListenBrainz Weekly Exploration playlist (tracks via /1/playlist/<uuid>)
+and create a matching Plex playlist by searching track titles and scoring results
+against expected artist+album.
+
+Usage:
+  python3 poc_listenbrainz_to_plex.py --config config/chris-config.yaml --verbose
+"""
+
+import argparse
+import datetime as dt
+import difflib
+import re
+import sys
+import unicodedata
+import urllib.parse
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Tuple
+
+import requests
+import xml.etree.ElementTree as ET
+
+try:
+    import yaml
+except ImportError:
+    print("✗ Missing dependency: PyYAML. Install with: sudo apt install python3-yaml")
+    sys.exit(1)
+
+
+LB_API = "https://api.listenbrainz.org"
+DEFAULT_THRESHOLD = 0.72  # good default; tweak if too strict/loose
+
+
+# ----------------------------
+# Helpers: text normalisation
+# ----------------------------
+
+APOSTROPHES = {
+    "\u2019": "'",  # ’
+    "\u2018": "'",  # ‘
+    "\u02bc": "'",  # ʼ
+    "\u2032": "'",  # ′
+    "\u0060": "'",  # `
+}
+
+# Treat these as "separators" we can ignore in matching.
+SEP_CHARS_RE = re.compile(r"[\-\–\—\/&:,;+$begin:math:text$$end:math:text$$begin:math:display$$end:math:display$\{\}\|]+")
+
+# Keep apostrophes because they can matter inside words, but normalise curly → straight.
+NON_WORD_RE = re.compile(r"[^\w\s']+", flags=re.UNICODE)
+
+
+def norm_text(s: str) -> str:
+    if s is None:
+        return ""
+    s = s.strip()
+    # unicode normalize
+    s = unicodedata.normalize("NFKC", s)
+    # unify apostrophes
+    for k, v in APOSTROPHES.items():
+        s = s.replace(k, v)
+    s = s.casefold()
+    # collapse fancy separators into spaces
+    s = SEP_CHARS_RE.sub(" ", s)
+    # remove remaining punctuation except apostrophes
+    s = NON_WORD_RE.sub(" ", s)
+    # collapse whitespace
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def token_set(s: str) -> set:
+    s = norm_text(s)
+    if not s:
+        return set()
+    return set(s.split())
+
+
+def seq_ratio(a: str, b: str) -> float:
+    a = norm_text(a)
+    b = norm_text(b)
+    if not a and not b:
+        return 1.0
+    if not a or not b:
+        return 0.0
+    return difflib.SequenceMatcher(None, a, b).ratio()
+
+
+def jaccard(a: str, b: str) -> float:
+    ta = token_set(a)
+    tb = token_set(b)
+    if not ta and not tb:
+        return 1.0
+    if not ta or not tb:
+        return 0.0
+    return len(ta & tb) / len(ta | tb)
+
+
+def artist_good_enough(expected: str, candidate: str) -> float:
+    """
+    Allow leeway for 'feat.', '&', 'with', 'as', etc.
+    We score using both token overlap and sequence similarity.
+    """
+    return 0.65 * jaccard(expected, candidate) + 0.35 * seq_ratio(expected, candidate)
+
+
+# ----------------------------
+# ListenBrainz
+# ----------------------------
+
+@dataclass
+class LBTrack:
+    artist: str
+    title: str
+    album: str
+
+
+def lb_get_json(url: str, token: Optional[str] = None) -> Dict[str, Any]:
+    headers = {"Accept": "application/json"}
+    if token:
+        headers["Authorization"] = f"Token {token}"
+    r = requests.get(url, headers=headers, timeout=30)
+    r.raise_for_status()
+    return r.json()
+
+
+def extract_playlist_uuid(identifier_url: str) -> Optional[str]:
+    """
+    identifier is usually: https://listenbrainz.org/playlist/<uuid>
+    """
+    if not identifier_url:
+        return None
+    # last path segment
+    parts = identifier_url.rstrip("/").split("/")
+    if not parts:
+        return None
+    uid = parts[-1]
+    if re.fullmatch(r"[0-9a-fA-F\-]{36}", uid):
+        return uid
+    return None
+
+
+def fetch_weekly_exploration_tracks(username: str, user_token: str, verbose: bool = False) -> Tuple[str, List[LBTrack]]:
+    """
+    1) GET /1/user/<user>/playlists/createdfor  (metadata; track list is empty)
+    2) Find playlist where algorithm_metadata.source_patch == 'weekly-exploration'
+    3) Extract playlist UUID from identifier
+    4) GET /1/playlist/<uuid> (real tracks)
+    """
+    createdfor_url = f"{LB_API}/1/user/{urllib.parse.quote(username)}/playlists/createdfor"
+    created = lb_get_json(createdfor_url, token=user_token)
+
+    playlists = created.get("playlists", [])
+    if not playlists:
+        raise RuntimeError("ListenBrainz returned no created-for playlists.")
+
+    weekly = None
+    weekly_title = None
+    weekly_identifier = None
+
+    for item in playlists:
+        pl = (item or {}).get("playlist") or {}
+        ext = pl.get("extension") or {}
+        jspf_pl = ext.get("https://musicbrainz.org/doc/jspf#playlist") or {}
+        add_meta = jspf_pl.get("additional_metadata") or {}
+        algo = add_meta.get("algorithm_metadata") or {}
+        source_patch = algo.get("source_patch")
+
+        # Weekly exploration marker
+        if source_patch == "weekly-exploration":
+            weekly = pl
+            weekly_title = pl.get("title") or "Weekly Exploration"
+            weekly_identifier = pl.get("identifier")
+            break
+
+    if not weekly:
+        # fallback: title contains "Weekly Exploration"
+        for item in playlists:
+            pl = (item or {}).get("playlist") or {}
+            title = (pl.get("title") or "")
+            if "weekly exploration" in title.casefold():
+                weekly = pl
+                weekly_title = title
+                weekly_identifier = pl.get("identifier")
+                break
+
+    if not weekly:
+        raise RuntimeError("Could not find Weekly Exploration playlist in created-for playlists.")
+
+    if verbose:
+        print(f"✓ {weekly_title}")
+
+    puid = extract_playlist_uuid(weekly_identifier or "")
+    if not puid:
+        raise RuntimeError(f"Could not extract playlist UUID from identifier: {weekly_identifier}")
+
+    playlist_url = f"{LB_API}/1/playlist/{puid}"
+    full = lb_get_json(playlist_url, token=user_token)
+    pl_obj = full.get("playlist") or {}
+    track_list = pl_obj.get("track") or []
+
+    tracks: List[LBTrack] = []
+    for t in track_list:
+        artist = (t or {}).get("creator") or ""
+        title = (t or {}).get("title") or ""
+        album = (t or {}).get("album") or ""
+        if title and artist:
+            tracks.append(LBTrack(artist=artist, title=title, album=album))
+
+    return weekly_title, tracks
+
+
+# ----------------------------
+# Plex (XML)
+# ----------------------------
+
+def plex_get_xml(plex_url: str, token: str, path: str, params: Optional[Dict[str, str]] = None) -> ET.Element:
+    url = plex_url.rstrip("/") + path
+    headers = {"X-Plex-Token": token, "Accept": "application/xml"}
+    r = requests.get(url, headers=headers, params=params, timeout=30)
+    r.raise_for_status()
+    # Plex returns XML
+    return ET.fromstring(r.text)
+
+
+def plex_machine_id(plex_url: str, token: str) -> str:
+    root = plex_get_xml(plex_url, token, "/identity")
+    mid = root.attrib.get("machineIdentifier")
+    if not mid:
+        raise RuntimeError("Could not read Plex machineIdentifier from /identity")
+    return mid
+
+
+def plex_library_section_id(plex_url: str, token: str, library_name: str) -> str:
+    root = plex_get_xml(plex_url, token, "/library/sections")
+    for d in root.findall("./Directory"):
+        title = d.attrib.get("title", "")
+        if title == library_name:
+            return d.attrib.get("key")
+    # fallback case-insensitive
+    for d in root.findall("./Directory"):
+        title = d.attrib.get("title", "")
+        if title.casefold() == library_name.casefold():
+            return d.attrib.get("key")
+    raise RuntimeError(f"Could not find Plex library section named '{library_name}'")
+
+
+@dataclass
+class PlexHit:
+    rating_key: str
+    title: str
+    artist: str
+    album: str
+
+
+def plex_search_tracks_by_title(plex_url: str, token: str, section_id: str, title_query: str) -> List[PlexHit]:
+    """
+    Search within a library section for tracks (type=10) by a query string.
+    """
+    params = {"type": "10", "query": title_query}
+    root = plex_get_xml(plex_url, token, f"/library/sections/{section_id}/search", params=params)
+
+    hits: List[PlexHit] = []
+    for tr in root.findall("./Track"):
+        rk = tr.attrib.get("ratingKey")
+        ttitle = tr.attrib.get("title", "")
+        artist = tr.attrib.get("grandparentTitle", "")
+        album = tr.attrib.get("parentTitle", "")
+        if rk:
+            hits.append(PlexHit(rating_key=rk, title=ttitle, artist=artist, album=album))
+    return hits
+
+
+def score_hit(expected_artist: str, expected_album: str, expected_title: str, hit: PlexHit) -> float:
+    # Strong preference: title similarity, then artist, then album
+    title_score = 0.55 * jaccard(expected_title, hit.title) + 0.45 * seq_ratio(expected_title, hit.title)
+    artist_score = artist_good_enough(expected_artist, hit.artist)
+    album_score = 0.55 * jaccard(expected_album, hit.album) + 0.45 * seq_ratio(expected_album, hit.album)
+
+    # Weighting tuned for your scenario:
+    # - Search is by title, so title should dominate
+    # - Artist is next most important
+    # - Album is helpful but sometimes messy
+    return 0.50 * title_score + 0.35 * artist_score + 0.15 * album_score
+
+
+def pick_best_match(tr: LBTrack, hits: List[PlexHit], threshold: float) -> Optional[Tuple[PlexHit, float]]:
+    if not hits:
+        return None
+
+    best = None
+    best_score = -1.0
+
+    for h in hits:
+        s = score_hit(tr.artist, tr.album, tr.title, h)
+        if s > best_score:
+            best_score = s
+            best = h
+
+    if best is None or best_score < threshold:
+        return None
+    return best, best_score
+
+
+def plex_create_playlist(plex_url: str, token: str, machine_id: str, title: str, rating_keys: List[str]) -> str:
+    """
+    Create a standard (non-smart) audio playlist with given track ratingKeys.
+    Returns playlist ratingKey.
+    """
+    if not rating_keys:
+        raise RuntimeError("No rating keys to create playlist")
+
+    # Plex playlist create endpoint:
+    # POST /playlists?type=audio&title=...&smart=0&uri=server://<machineId>/com.plexapp.plugins.library/library/metadata/<rk1>,<rk2>...
+    uri = f"server://{machine_id}/com.plexapp.plugins.library/library/metadata/" + ",".join(rating_keys)
+
+    url = plex_url.rstrip("/") + "/playlists"
+    headers = {"X-Plex-Token": token, "Accept": "application/xml"}
+
+    params = {
+        "type": "audio",
+        "title": title,
+        "smart": "0",
+        "uri": uri,
+    }
+
+    r = requests.post(url, headers=headers, params=params, timeout=30)
+    r.raise_for_status()
+    root = ET.fromstring(r.text)
+    pl = root.find("./Playlist")
+    if pl is None:
+        # some servers wrap differently, try attribute on root
+        if root.tag == "Playlist" and root.attrib.get("ratingKey"):
+            return root.attrib["ratingKey"]
+        raise RuntimeError("Could not parse playlist creation response from Plex")
+
+    rk = pl.attrib.get("ratingKey")
+    if not rk:
+        raise RuntimeError("Playlist created but Plex did not return a ratingKey")
+    return rk
+
+
+# ----------------------------
+# Main
+# ----------------------------
+
+def load_config(path: str) -> Dict[str, Any]:
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def build_playlist_name(prefix: str, weekly_title: str) -> str:
+    # Your prefix already exists; we append year/week from current local date.
+    today = dt.date.today()
+    year, week, _ = today.isocalendar()
+    return f"{prefix} – {year} W{week:02d}"
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--config", required=True, help="Path to YAML config")
+    ap.add_argument("--verbose", action="store_true", help="Verbose output")
+    ap.add_argument("--threshold", type=float, default=DEFAULT_THRESHOLD, help="Match threshold (0..1)")
+    args = ap.parse_args()
+
+    cfg = load_config(args.config)
+
+    lb = cfg.get("listenbrainz") or {}
+    plex = cfg.get("plex") or {}
+
+    username = lb.get("username")
+    user_token = lb.get("user_token")
+    if not username or not user_token:
+        print("✗ ListenBrainz config missing 'username' or 'user_token'")
+        sys.exit(1)
+
+    if not plex.get("enabled", False):
+        print("✗ Plex is disabled in config (plex.enabled: false)")
+        sys.exit(1)
+
+    plex_url = plex.get("plex-url")
+    plex_token = plex.get("plex-token")
+    plex_library = plex.get("plex-library")
+    pl_prefix = plex.get("pl-name", "ListenBrainz Weekly Explore")
+
+    if not plex_url or not plex_token or not plex_library:
+        print("✗ Plex config missing one of: plex-url, plex-token, plex-library")
+        sys.exit(1)
+
+    # Plex identity/library
+    machine_id = plex_machine_id(plex_url, plex_token)
+    print(f"✓ Plex machine ID: {machine_id}")
+
+    section_id = plex_library_section_id(plex_url, plex_token, plex_library)
+    print(f"✓ Plex library ID: {section_id}")
+
+    # ListenBrainz weekly exploration (FIXED FLOW)
+    print("→ Fetching Weekly Exploration…")
+    weekly_title, lb_tracks = fetch_weekly_exploration_tracks(username, user_token, verbose=args.verbose)
+    print(f"✓ {len(lb_tracks)} tracks")
+
+    if not lb_tracks:
+        print("✗ Weekly Exploration contained 0 tracks — aborting")
+        sys.exit(1)
+
+    # Match each LB track to Plex
+    matched_keys: List[str] = []
+    unmatched: List[LBTrack] = []
+
+    for t in lb_tracks:
+        # Search by track title only (as requested)
+        hits = plex_search_tracks_by_title(plex_url, plex_token, section_id, t.title)
+        best = pick_best_match(t, hits, threshold=args.threshold)
+
+        if best is None:
+            unmatched.append(t)
+            if args.verbose:
+                print(f"  ✗ {t.artist} — {t.title}")
+            continue
+
+        hit, score = best
+        matched_keys.append(hit.rating_key)
+        if args.verbose:
+            # show what it matched to, but keep it readable
+            print(f"  ✓ {t.artist} — {t.title}  →  {hit.artist} / {hit.album} / {hit.title}  ({score:.2f})")
+
+    print(f"✓ Matched {len(matched_keys)} tracks")
+
+    if unmatched:
+        print("\n✗ Unmatched tracks:")
+        for t in unmatched:
+            print(f"  - {t.artist} — {t.title}")
+
+    if not matched_keys:
+        print("✗ No tracks matched — aborting")
+        sys.exit(1)
+
+    # Create Plex playlist
+    playlist_name = build_playlist_name(pl_prefix, weekly_title)
+    pl_id = plex_create_playlist(plex_url, plex_token, machine_id, playlist_name, matched_keys)
+    print(f"✓ Playlist created: {pl_id}")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except requests.HTTPError as e:
+        print(f"✗ HTTP error: {e}")
+        sys.exit(1)
+    except ET.ParseError as e:
+        print(f"✗ XML parse error (Plex response not XML?): {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"✗ {e}")
+        sys.exit(1)
