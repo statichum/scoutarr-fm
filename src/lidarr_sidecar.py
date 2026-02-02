@@ -81,7 +81,6 @@ def lidarr_run_import(cfg: Dict[str, Any], contract: Dict[str, Any], user_agent:
     dry_run = contract.get("dry_run", True)
     artists = contract.get("artists", {})
 
-    # rank by "number of sources" (so weekly+cf rises)
     ranked = sorted(
         artists.items(),
         key=lambda kv: (len(kv[1].get("sources", set())), kv[1].get("name", "")),

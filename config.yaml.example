@@ -28,7 +28,6 @@ plex:
   plex-library: "Music"  # Library name where the playlist will be created
 
   # Playlists
-  last-week-exp: true        # Creates 'Last Week’s Exploration' playlist
   pl-retention: 6            # Number of weeks of playlists to keep
   pl-name: "ListenBrainz Weekly Explore"  # Prefix, followed by ' – YYYY Www'
 
