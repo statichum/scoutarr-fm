@@ -149,8 +149,9 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     machine = _plex_machine_id(base, token)
     section = _plex_section_id(base, token, library)
 
-    suffix = weekly["week_id"].replace("-", " ").replace("W", "W")
-    title = f"{prefix} – {suffix}"
+    year, week = weekly["week_id"].split("-")
+    title = f"{prefix} {week} {year}"
+
 
 
     tracks = [

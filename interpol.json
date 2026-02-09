@@ -1,0 +1,722 @@
+{
+  "status": "continuing",
+  "ended": false,
+  "artistName": "Interpol",
+  "foreignArtistId": "b23e8a63-8f47-4882-b55b-df2c92ef400e",
+  "tadbId": 0,
+  "discogsId": 0,
+  "overview": "Interpol is an American indie rock and post-punk revival band from New York City. Formed in 1997, the band's original line-up consisted of Paul Banks (vocals, guitar), Daniel Kessler (guitar, vocals), Carlos Dengler (bass guitar, keyboards) and Greg Drudy (drums, percussion). Drudy left the band in 2000 and was replaced by Sam Fogarino. In 2010, shortly after recording finished for the band's fourth album, Dengler left to pursue personal projects. According to drummer Sam Fogarino, the band is going on a hiatus and pursuing separate projects.\nInterpol, having first performed at Luna Lounge along with other notable bands like The Strokes, Longwave, The National and stellastarr, is one of the bands associated with the New York City indie music scene, and was one of several groups that emerged out of the post-punk revival of the 2000s. The band's sound is generally a mix of staccato bass and rhythmic, harmonized guitar, with a snare heavy mix, drawing comparisons to post-punk bands such as Joy Division and The Chameleons. Aside from the lyrics, their songwriting method includes all of the band members, rather than relying on any given chief songwriter.\nInterpol's debut album Turn on the Bright Lights (2002) was critically acclaimed, making it to tenth position on the NME's list of top albums in 2002 as well as No. 1 on Pitchfork Media's Top 50 Albums of 2002. Subsequent records Antics (2004) and Our Love to Admire (2007) have confirmed the band's initial success and turned them into a commercial and critical success. The band released its fourth, self-titled album on September 7, 2010.",
+  "artistType": "Group",
+  "disambiguation": "NYC rock band",
+  "links": [
+    {
+      "url": "https://www.discogs.com/artist/71725",
+      "name": "discogs"
+    },
+    {
+      "url": "https://myspace.com/interpol",
+      "name": "myspace"
+    },
+    {
+      "url": "https://www.bbc.co.uk/music/artists/b23e8a63-8f47-4882-b55b-df2c92ef400e",
+      "name": "bbc"
+    },
+    {
+      "url": "https://www.facebook.com/interpol",
+      "name": "facebook"
+    },
+    {
+      "url": "https://twitter.com/Interpol",
+      "name": "twitter"
+    },
+    {
+      "url": "https://www.imdb.com/name/nm1804104/",
+      "name": "imdb"
+    },
+    {
+      "url": "https://www.allmusic.com/artist/mn0000096576",
+      "name": "allmusic"
+    },
+    {
+      "url": "https://www.wikidata.org/wiki/Q331790",
+      "name": "wikidata"
+    },
+    {
+      "url": "https://rateyourmusic.com/artist/interpol",
+      "name": "rateyourmusic"
+    },
+    {
+      "url": "https://secondhandsongs.com/artist/45425",
+      "name": "secondhandsongs"
+    },
+    {
+      "url": "http://viaf.org/viaf/128211548",
+      "name": "viaf"
+    },
+    {
+      "url": "http://www.purevolume.com/Interpol",
+      "name": "purevolume"
+    },
+    {
+      "url": "https://www.last.fm/music/Interpol",
+      "name": "last"
+    },
+    {
+      "url": "https://genius.com/artists/Interpol",
+      "name": "genius"
+    },
+    {
+      "url": "https://soundcloud.com/interpolnyc",
+      "name": "soundcloud"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCoZTVNXGrbWMo-zH1seGMFg",
+      "name": "youtube"
+    },
+    {
+      "url": "http://www.worldcat.org/identities/lccn-no2002087080/",
+      "name": "worldcat"
+    },
+    {
+      "url": "https://plus.google.com/+InterpolNYC",
+      "name": "google"
+    },
+    {
+      "url": "https://open.spotify.com/artist/3WaJSfKnzc65VDgmj2zU8B",
+      "name": "spotify"
+    },
+    {
+      "url": "https://www.instagram.com/interpol/",
+      "name": "instagram"
+    },
+    {
+      "url": "https://itunes.apple.com/us/artist/id2960765",
+      "name": "apple"
+    },
+    {
+      "url": "https://play.google.com/store/music/artist?id=Afkjrr4xvqs2ralehoaoivr4vou",
+      "name": "google"
+    },
+    {
+      "url": "http://www.xsilence.net/interview-9.htm",
+      "name": "xsilence"
+    },
+    {
+      "url": "http://www.xsilence.net/images/artistes/interpol/interviews/paris20021031575215800692.jpeg",
+      "name": "xsilence"
+    },
+    {
+      "url": "https://www.deezer.com/artist/1652",
+      "name": "deezer"
+    },
+    {
+      "url": "https://www.bandsintown.com/a/744",
+      "name": "bandsintown"
+    },
+    {
+      "url": "https://imvdb.com/n/interpol",
+      "name": "imvdb"
+    },
+    {
+      "url": "https://soundcloud.com/interpol-official",
+      "name": "soundcloud"
+    },
+    {
+      "url": "https://www.setlist.fm/setlists/interpol-2bd6982e.html",
+      "name": "setlist"
+    },
+    {
+      "url": "https://www.songkick.com/artists/138058",
+      "name": "songkick"
+    },
+    {
+      "url": "https://www.spirit-of-rock.com/en/band/Interpol",
+      "name": "spirit-of-rock"
+    },
+    {
+      "url": "https://uk.7digital.com/artist/interpol",
+      "name": "7digital"
+    },
+    {
+      "url": "https://www.junodownload.com/artists/Interpol/releases/",
+      "name": "junodownload"
+    },
+    {
+      "url": "https://tidal.com/artist/9245",
+      "name": "tidal"
+    },
+    {
+      "url": "https://musicmoz.org/Bands_and_Artists/I/Interpol/",
+      "name": "musicmoz"
+    },
+    {
+      "url": "https://interpol.bandcamp.com/",
+      "name": "bandcamp"
+    },
+    {
+      "url": "https://d-nb.info/gnd/10331473-8",
+      "name": "d-nb"
+    },
+    {
+      "url": "http://id.loc.gov/authorities/names/no2002087080",
+      "name": "loc"
+    },
+    {
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb14066280f",
+      "name": "bnf"
+    },
+    {
+      "url": "https://music.youtube.com/channel/UCTz1LbApOPI1byhP61ktXdw",
+      "name": "youtube"
+    },
+    {
+      "url": "https://www.qobuz.com/us-en/interpreter/interpol/111978",
+      "name": "qobuz"
+    },
+    {
+      "url": "https://www.qobuz.com/us-en/interpreter/interpol/111978",
+      "name": "qobuz"
+    },
+    {
+      "url": "https://muzikum.eu/en/interpol/lyrics",
+      "name": "muzikum"
+    },
+    {
+      "url": "https://www.interpolnyc.com/",
+      "name": "interpolnyc"
+    },
+    {
+      "url": "https://www.musik-sammler.de/artist/interpol/",
+      "name": "musik-sammler"
+    },
+    {
+      "url": "https://www.whosampled.com/Interpol/",
+      "name": "whosampled"
+    },
+    {
+      "url": "https://music.apple.com/us/artist/2960765",
+      "name": "apple"
+    }
+  ],
+  "nextAlbum": null,
+  "lastAlbum": {
+    "title": "The Other Side of Make‐Believe",
+    "disambiguation": "",
+    "overview": "The Other Side of Make-Believe is the seventh studio album by American rock band Interpol, released on July 15, 2022, through Matador Records. Produced by Mark \"Flood\" Ellis and mixed by Alan Moulder, the album was recorded between September 2021 and January 2022 at Battery Studios in London. The songs \"Toni\", \"Something Changed\", \"Fables\", and \"Gran Hotel\" were released as singles in promotion of the album. The album title comes from the opening lyrics of the track \"Passenger\".",
+    "artistId": 63,
+    "foreignAlbumId": "79b8aebb-c519-473a-9580-6c5ac0141d29",
+    "monitored": true,
+    "anyReleaseOk": true,
+    "profileId": 1,
+    "duration": 2742877,
+    "albumType": "Album",
+    "secondaryTypes": [],
+    "mediumCount": 1,
+    "ratings": {
+      "votes": 3,
+      "value": 6.7
+    },
+    "releaseDate": "2022-07-15T00:00:00Z",
+    "releases": [
+      {
+        "id": 2710,
+        "albumId": 401,
+        "foreignReleaseId": "386233d1-ea9b-407d-87af-4d67f7abc572",
+        "title": "The Other Side of Make‐Believe",
+        "status": "Official",
+        "duration": 2741000,
+        "trackCount": 11,
+        "media": [
+          {
+            "mediumNumber": 1,
+            "mediumName": "",
+            "mediumFormat": "Digital Media"
+          }
+        ],
+        "mediumCount": 1,
+        "disambiguation": "",
+        "country": [
+          "[Worldwide]"
+        ],
+        "label": [
+          "Matador"
+        ],
+        "format": "Digital Media",
+        "monitored": false
+      },
+      {
+        "id": 2711,
+        "albumId": 401,
+        "foreignReleaseId": "71d061e5-d24b-474c-8962-eb486528ef21",
+        "title": "The Other Side of Make‐Believe",
+        "status": "Official",
+        "duration": 2742877,
+        "trackCount": 11,
+        "media": [
+          {
+            "mediumNumber": 1,
+            "mediumName": "",
+            "mediumFormat": "CD"
+          }
+        ],
+        "mediumCount": 1,
+        "disambiguation": "",
+        "country": [
+          "United Kingdom",
+          "United States"
+        ],
+        "label": [
+          "Matador"
+        ],
+        "format": "CD",
+        "monitored": true
+      },
+      {
+        "id": 2712,
+        "albumId": 401,
+        "foreignReleaseId": "549c5c28-1078-4870-b988-30cacff59147",
+        "title": "The Other Side of Make‐Believe",
+        "status": "Official",
+        "duration": 0,
+        "trackCount": 11,
+        "media": [
+          {
+            "mediumNumber": 1,
+            "mediumName": "",
+            "mediumFormat": "12\" Vinyl"
+          }
+        ],
+        "mediumCount": 1,
+        "disambiguation": "",
+        "country": [
+          "Europe"
+        ],
+        "label": [
+          "Matador",
+          "Matador"
+        ],
+        "format": "12\" Vinyl",
+        "monitored": false
+      },
+      {
+        "id": 2713,
+        "albumId": 401,
+        "foreignReleaseId": "bdd9bac4-bf90-425f-b3ac-c9ca12328974",
+        "title": "The Other Side of Make‐Believe",
+        "status": "Official",
+        "duration": 2742877,
+        "trackCount": 11,
+        "media": [
+          {
+            "mediumNumber": 1,
+            "mediumName": "",
+            "mediumFormat": "CD"
+          }
+        ],
+        "mediumCount": 1,
+        "disambiguation": "",
+        "country": [
+          "Japan"
+        ],
+        "label": [
+          "Beat Records",
+          "Matador"
+        ],
+        "format": "CD",
+        "monitored": false
+      },
+      {
+        "id": 2714,
+        "albumId": 401,
+        "foreignReleaseId": "8a23fadb-ad77-41bd-81f9-34a996366710",
+        "title": "The Other Side Of Make-Believe",
+        "status": "Official",
+        "duration": 0,
+        "trackCount": 11,
+        "media": [
+          {
+            "mediumNumber": 1,
+            "mediumName": "",
+            "mediumFormat": "12\" Vinyl"
+          }
+        ],
+        "mediumCount": 1,
+        "disambiguation": "",
+        "country": [
+          "Europe"
+        ],
+        "label": [
+          "Matador"
+        ],
+        "format": "12\" Vinyl",
+        "monitored": false
+      }
+    ],
+    "genres": [
+      "Alternative Rock",
+      "Indie Rock",
+      "Rock"
+    ],
+    "media": [
+      {
+        "mediumNumber": 1,
+        "mediumName": "",
+        "mediumFormat": "CD"
+      }
+    ],
+    "artist": {
+      "status": "continuing",
+      "ended": false,
+      "artistName": "Interpol",
+      "foreignArtistId": "b23e8a63-8f47-4882-b55b-df2c92ef400e",
+      "tadbId": 0,
+      "discogsId": 0,
+      "overview": "Interpol is an American indie rock and post-punk revival band from New York City. Formed in 1997, the band's original line-up consisted of Paul Banks (vocals, guitar), Daniel Kessler (guitar, vocals), Carlos Dengler (bass guitar, keyboards) and Greg Drudy (drums, percussion). Drudy left the band in 2000 and was replaced by Sam Fogarino. In 2010, shortly after recording finished for the band's fourth album, Dengler left to pursue personal projects. According to drummer Sam Fogarino, the band is going on a hiatus and pursuing separate projects.\nInterpol, having first performed at Luna Lounge along with other notable bands like The Strokes, Longwave, The National and stellastarr, is one of the bands associated with the New York City indie music scene, and was one of several groups that emerged out of the post-punk revival of the 2000s. The band's sound is generally a mix of staccato bass and rhythmic, harmonized guitar, with a snare heavy mix, drawing comparisons to post-punk bands such as Joy Division and The Chameleons. Aside from the lyrics, their songwriting method includes all of the band members, rather than relying on any given chief songwriter.\nInterpol's debut album Turn on the Bright Lights (2002) was critically acclaimed, making it to tenth position on the NME's list of top albums in 2002 as well as No. 1 on Pitchfork Media's Top 50 Albums of 2002. Subsequent records Antics (2004) and Our Love to Admire (2007) have confirmed the band's initial success and turned them into a commercial and critical success. The band released its fourth, self-titled album on September 7, 2010.",
+      "artistType": "Group",
+      "disambiguation": "NYC rock band",
+      "links": [
+        {
+          "url": "https://www.discogs.com/artist/71725",
+          "name": "discogs"
+        },
+        {
+          "url": "https://myspace.com/interpol",
+          "name": "myspace"
+        },
+        {
+          "url": "https://www.bbc.co.uk/music/artists/b23e8a63-8f47-4882-b55b-df2c92ef400e",
+          "name": "bbc"
+        },
+        {
+          "url": "https://www.facebook.com/interpol",
+          "name": "facebook"
+        },
+        {
+          "url": "https://twitter.com/Interpol",
+          "name": "twitter"
+        },
+        {
+          "url": "https://www.imdb.com/name/nm1804104/",
+          "name": "imdb"
+        },
+        {
+          "url": "https://www.allmusic.com/artist/mn0000096576",
+          "name": "allmusic"
+        },
+        {
+          "url": "https://www.wikidata.org/wiki/Q331790",
+          "name": "wikidata"
+        },
+        {
+          "url": "https://rateyourmusic.com/artist/interpol",
+          "name": "rateyourmusic"
+        },
+        {
+          "url": "https://secondhandsongs.com/artist/45425",
+          "name": "secondhandsongs"
+        },
+        {
+          "url": "http://viaf.org/viaf/128211548",
+          "name": "viaf"
+        },
+        {
+          "url": "http://www.purevolume.com/Interpol",
+          "name": "purevolume"
+        },
+        {
+          "url": "https://www.last.fm/music/Interpol",
+          "name": "last"
+        },
+        {
+          "url": "https://genius.com/artists/Interpol",
+          "name": "genius"
+        },
+        {
+          "url": "https://soundcloud.com/interpolnyc",
+          "name": "soundcloud"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCoZTVNXGrbWMo-zH1seGMFg",
+          "name": "youtube"
+        },
+        {
+          "url": "http://www.worldcat.org/identities/lccn-no2002087080/",
+          "name": "worldcat"
+        },
+        {
+          "url": "https://plus.google.com/+InterpolNYC",
+          "name": "google"
+        },
+        {
+          "url": "https://open.spotify.com/artist/3WaJSfKnzc65VDgmj2zU8B",
+          "name": "spotify"
+        },
+        {
+          "url": "https://www.instagram.com/interpol/",
+          "name": "instagram"
+        },
+        {
+          "url": "https://itunes.apple.com/us/artist/id2960765",
+          "name": "apple"
+        },
+        {
+          "url": "https://play.google.com/store/music/artist?id=Afkjrr4xvqs2ralehoaoivr4vou",
+          "name": "google"
+        },
+        {
+          "url": "http://www.xsilence.net/interview-9.htm",
+          "name": "xsilence"
+        },
+        {
+          "url": "http://www.xsilence.net/images/artistes/interpol/interviews/paris20021031575215800692.jpeg",
+          "name": "xsilence"
+        },
+        {
+          "url": "https://www.deezer.com/artist/1652",
+          "name": "deezer"
+        },
+        {
+          "url": "https://www.bandsintown.com/a/744",
+          "name": "bandsintown"
+        },
+        {
+          "url": "https://imvdb.com/n/interpol",
+          "name": "imvdb"
+        },
+        {
+          "url": "https://soundcloud.com/interpol-official",
+          "name": "soundcloud"
+        },
+        {
+          "url": "https://www.setlist.fm/setlists/interpol-2bd6982e.html",
+          "name": "setlist"
+        },
+        {
+          "url": "https://www.songkick.com/artists/138058",
+          "name": "songkick"
+        },
+        {
+          "url": "https://www.spirit-of-rock.com/en/band/Interpol",
+          "name": "spirit-of-rock"
+        },
+        {
+          "url": "https://uk.7digital.com/artist/interpol",
+          "name": "7digital"
+        },
+        {
+          "url": "https://www.junodownload.com/artists/Interpol/releases/",
+          "name": "junodownload"
+        },
+        {
+          "url": "https://tidal.com/artist/9245",
+          "name": "tidal"
+        },
+        {
+          "url": "https://musicmoz.org/Bands_and_Artists/I/Interpol/",
+          "name": "musicmoz"
+        },
+        {
+          "url": "https://interpol.bandcamp.com/",
+          "name": "bandcamp"
+        },
+        {
+          "url": "https://d-nb.info/gnd/10331473-8",
+          "name": "d-nb"
+        },
+        {
+          "url": "http://id.loc.gov/authorities/names/no2002087080",
+          "name": "loc"
+        },
+        {
+          "url": "https://catalogue.bnf.fr/ark:/12148/cb14066280f",
+          "name": "bnf"
+        },
+        {
+          "url": "https://music.youtube.com/channel/UCTz1LbApOPI1byhP61ktXdw",
+          "name": "youtube"
+        },
+        {
+          "url": "https://www.qobuz.com/us-en/interpreter/interpol/111978",
+          "name": "qobuz"
+        },
+        {
+          "url": "https://www.qobuz.com/us-en/interpreter/interpol/111978",
+          "name": "qobuz"
+        },
+        {
+          "url": "https://muzikum.eu/en/interpol/lyrics",
+          "name": "muzikum"
+        },
+        {
+          "url": "https://www.interpolnyc.com/",
+          "name": "interpolnyc"
+        },
+        {
+          "url": "https://www.musik-sammler.de/artist/interpol/",
+          "name": "musik-sammler"
+        },
+        {
+          "url": "https://www.whosampled.com/Interpol/",
+          "name": "whosampled"
+        },
+        {
+          "url": "https://music.apple.com/us/artist/2960765",
+          "name": "apple"
+        }
+      ],
+      "nextAlbum": null,
+      "lastAlbum": null,
+      "images": [
+        {
+          "url": "https://theaudiodb.com/v1/tadb/artist/banner/interpol-560eef7e36447.jpg",
+          "coverType": "banner",
+          "extension": ".jpg"
+        },
+        {
+          "url": "https://theaudiodb.com/v1/tadb/artist/fanart/iz89su1760692359.jpg",
+          "coverType": "fanart",
+          "extension": ".jpg"
+        },
+        {
+          "url": "https://theaudiodb.com/v1/tadb/artist/logo/interpol-4df21da20f393.png",
+          "coverType": "clearlogo",
+          "extension": ".png"
+        },
+        {
+          "url": "https://theaudiodb.com/v1/tadb/artist/thumb/83wmbt1760692256.jpg",
+          "coverType": "poster",
+          "extension": ".jpg"
+        }
+      ],
+      "path": "/mnt/armadillo/Music/Interpol",
+      "qualityProfileId": 1,
+      "metadataProfileId": 1,
+      "monitored": true,
+      "monitorNewItems": "all",
+      "genres": [
+        "Indie Rock",
+        "Post-Punk",
+        "Post-Punk Revival"
+      ],
+      "cleanName": "interpol",
+      "sortName": "interpol",
+      "tags": [],
+      "added": "2025-04-25T04:54:06Z",
+      "ratings": {
+        "votes": 6,
+        "value": 8.3
+      },
+      "id": 63
+    },
+    "images": [
+      {
+        "url": "https://imagecache.lidarr.audio/v1/caa/386233d1-ea9b-407d-87af-4d67f7abc572/33538675362-1200.jpg",
+        "coverType": "cover",
+        "extension": ".jpg"
+      },
+      {
+        "url": "https://imagecache.lidarr.audio/v1/caa/71d061e5-d24b-474c-8962-eb486528ef21/33556757145-1200.jpg",
+        "coverType": "disc",
+        "extension": ".jpg"
+      }
+    ],
+    "links": [
+      {
+        "url": "https://www.plattentests.de/rezi.php?show=18664",
+        "name": "plattentests"
+      },
+      {
+        "url": "https://www.laut.de/Interpol/Alben/The-Other-Side-Of-Make-Believe-118752",
+        "name": "laut"
+      },
+      {
+        "url": "https://www.offiziellecharts.de/charts/album-details-500728",
+        "name": "offiziellecharts"
+      },
+      {
+        "url": "https://www.discogs.com/master/2705696",
+        "name": "discogs"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q111940411",
+        "name": "wikidata"
+      },
+      {
+        "url": "https://www.allmusic.com/album/mw0003702246",
+        "name": "allmusic"
+      },
+      {
+        "url": "https://rateyourmusic.com/release/album/interpol/the-other-side-of-make-believe/",
+        "name": "rateyourmusic"
+      },
+      {
+        "url": "https://genius.com/albums/Interpol/The-other-side-of-make-believe",
+        "name": "genius"
+      },
+      {
+        "url": "https://www.musik-sammler.de/album/1016459/",
+        "name": "musik-sammler"
+      },
+      {
+        "url": "https://pitchfork.com/reviews/albums/interpol-the-other-side-of-make-believe/",
+        "name": "pitchfork"
+      }
+    ],
+    "lastSearchTime": "2025-04-28T11:11:44Z",
+    "id": 401
+  },
+  "images": [
+    {
+      "url": "/MediaCover/63/banner.jpg?lastWrite=639008450684479341",
+      "coverType": "banner",
+      "extension": ".jpg",
+      "remoteUrl": "https://theaudiodb.com/v1/tadb/artist/banner/interpol-560eef7e36447.jpg"
+    },
+    {
+      "url": "/MediaCover/63/fanart.jpg?lastWrite=639008450684509340",
+      "coverType": "fanart",
+      "extension": ".jpg",
+      "remoteUrl": "https://theaudiodb.com/v1/tadb/artist/fanart/iz89su1760692359.jpg"
+    },
+    {
+      "url": "/MediaCover/63/clearlogo.png?lastWrite=639008450684519340",
+      "coverType": "clearlogo",
+      "extension": ".png",
+      "remoteUrl": "https://theaudiodb.com/v1/tadb/artist/logo/interpol-4df21da20f393.png"
+    },
+    {
+      "url": "/MediaCover/63/poster.jpg?lastWrite=639008450684539339",
+      "coverType": "poster",
+      "extension": ".jpg",
+      "remoteUrl": "https://theaudiodb.com/v1/tadb/artist/thumb/83wmbt1760692256.jpg"
+    }
+  ],
+  "path": "/mnt/armadillo/Music/Interpol",
+  "qualityProfileId": 1,
+  "metadataProfileId": 4,
+  "monitored": true,
+  "monitorNewItems": "all",
+  "rootFolderPath": "/mnt/armadillo/Music/",
+  "genres": [
+    "Indie Rock",
+    "Post-Punk",
+    "Post-Punk Revival"
+  ],
+  "cleanName": "interpol",
+  "sortName": "interpol",
+  "tags": [],
+  "added": "2025-04-25T04:54:06Z",
+  "ratings": {
+    "votes": 6,
+    "value": 8.3
+  },
+  "statistics": {
+    "albumCount": 14,
+    "trackFileCount": 93,
+    "trackCount": 110,
+    "totalTrackCount": 121,
+    "sizeOnDisk": 3344526085,
+    "percentOfTracks": 84.54545454545454545454545455
+  },
+  "id": 63
+}

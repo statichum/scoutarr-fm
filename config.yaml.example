@@ -21,21 +21,21 @@ listenbrainz:
 ##### PLEX CONFIG ####
 
 plex:
-  enabled: true  # Enables import of previous weeks' Weekly Exploration playlist into Plex
-  plex-token: "2tsMJxxxxxxxxxxxx"  # X-Plex token
+  enabled: true                           # Enables import of previous weeks' Weekly Exploration playlist into Plex
+  plex-token: "2tsMJxxxxxxxxxxxx"         # X-Plex token
   plex-username: "your-plex-username"
   plex-url: "http://100.121.111.8:32400"  # Must be accessible by docker container
-  plex-library: "Music"  # Library name where the playlist will be created
+  plex-library: "Music"                   # Library name where the playlist will be created
 
   # Playlists
   pl-retention: 6            # Number of weeks of playlists to keep
-  pl-name: "ListenBrainz Weekly Explore"  # Prefix, followed by ' – YYYY Www'
+  pl-name: "LB Weekly"       # Prefix, followed by ' – YYYY Www'
 
 ##### LIDARR CONFIG ####
 
 lidarr:
   enabled: true  # Enables adding artists to Lidarr
-  url: "http://100.121.111.8:8686"  # Must be accessible by docker container
+  url: "http://100.121.111.8:8686"      # Must be accessible by docker container
   api_key: "e927b0647cxxxxxxxxxxxxxxx"  # Lidarr > Settings > General
 
   root_folder: "/mnt/Music"  # Root folder to be used in Lidarr
