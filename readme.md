@@ -3,7 +3,6 @@
 Scoutarr.fm pulls ListenBrainz recommendations and imports artists into Lidarr
 It also has the option to insert the Weekly Explore playlist from ListenBrainz into PlexAmp (this uses the previous week's weekly explore so that it can take advantage of added artists and tracks being recommended)
 
-(Full disclosure, I started writing this and had Ai finish it off and add some things so it is more-or-less Ai written)
 ---
 
 ## Requirements
