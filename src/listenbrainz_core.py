@@ -2,7 +2,8 @@ import time
 import requests
 from datetime import datetime
 from typing import Dict, Any, List, Optional
-
+import functools
+print = functools.partial(print, flush=True)
 
 LB_CF_RECORDING = "https://api.listenbrainz.org/1/cf/recommendation/user"
 LB_CREATED_FOR = "https://api.listenbrainz.org/1/user/{user}/playlists/createdfor"
