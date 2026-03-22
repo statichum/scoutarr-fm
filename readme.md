@@ -18,10 +18,31 @@ Scoutarr.fm is a CLI tool for Lidarr, Plex/Plexamp and Listenbrainz users (no po
 
 ## Installation
 
-# 1.0 Clone the repo:
+# 1.0 Create docker compose file:
 
-```bash
-git clone https://github.com/statichum/scoutarr-fm.git
+```
+services:
+  scoutarr:
+    image: ghcr.io/statichum/scoutarr-fm
+    container_name: scoutarr-fm
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    volumes:
+      - ./config/:/config/
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+
+```
+
+# 2.0 Pull image
+
+```
+docker compose pull
 ```
 
 # 2.0 Set up config:
@@ -31,6 +52,7 @@ Note - use as many config files as you like for any number of users/setups.
 Name config files however you prefer, they will be used as long as theyre in config file and have .yaml extension.
 
 ```bash
+mkdir config
 cd scoutarr-fm
 mkdir config
 cp config.yaml.example ./config/config-swedishgary.yaml
@@ -38,7 +60,7 @@ cd config
 nano config-swedishgary.yaml
 ```
 
-#3.0 Set plex webook
+# 3.0 Set plex webook
 
 Go to Plex > Settings > Webhooks
 Set your Scputarr url here
@@ -47,7 +69,7 @@ Set your Scputarr url here
 http://localhost:8787/webhook
 '''
 
-#4.0 First run
+# 4.0 First run
 
 On first run, Scoutarr will sync all ratings with Listenbrainz, run it using compose up and watch the output for issues
 This will take some time to complete.
@@ -59,7 +81,7 @@ docker compose up
 Any new/changed ratings are synced on the fly from webhooks.
 
 Cron inside the container runs two things:
-- Full ratings sync weekly at 1am on Sundays to ensure all tracks are synced correctly.
+- Full ratings sync weekly at 3am on Sundays to ensure all tracks are synced correctly.
 - Listenbrainz recommmendations loop to insert artists into Lidarr and create playlists, this is run weekly on Tuesdays at 3am (Listenbrainz cretes weekly explore playlists on early on Monday of your selected timezone but I've noticed some days LB glitches and things run later than expected - running on Tuesday is much safer.) 
 
 

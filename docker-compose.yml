@@ -1,6 +1,6 @@
 services:
   scoutarr:
-    build: .
+    image: ghcr.io/statichum/scoutarr-fm
     container_name: scoutarr-fm
     logging:
       driver: "json-file"
@@ -9,8 +9,7 @@ services:
         max-file: "3"
     volumes:
       - ./config/:/config/
+      - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     ports:
-      - "8787:8787"   # webhook listener
-    environment:
-      - TZ=Pacific/Auckland
+      - "8787:8787"
