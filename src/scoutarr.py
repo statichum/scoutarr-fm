@@ -2,12 +2,11 @@
 
 import socket
 socket.has_ipv6 = False
-
 import sys
-import glob
 import yaml
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
+from config_loader import list_config_files
 
 from listenbrainz_core import (
     lb_get_weekly_exploration_playlists,
@@ -22,8 +21,6 @@ from plex_sidecar import plex_run_playlists
 
 USER_AGENT = "scoutarr.fm/0.6 (christuckey.uk)"
 
-CONFIG_DIR = Path("/config")
-FALLBACK_CONFIG_DIR = Path(__file__).resolve().parent.parent / "config"
 
 
 # ------------------------------------------------------------
@@ -39,18 +36,6 @@ def load_yaml(path: Path) -> Dict[str, Any]:
         return yaml.safe_load(f) or {}
 
 
-def list_config_files() -> List[Path]:
-    if CONFIG_DIR.exists():
-        files = sorted(Path(p) for p in glob.glob(str(CONFIG_DIR / "*.y*ml")))
-        if files:
-            return files
-
-    if FALLBACK_CONFIG_DIR.exists():
-        files = sorted(Path(p) for p in glob.glob(str(FALLBACK_CONFIG_DIR / "*.y*ml")))
-        if files:
-            return files
-
-    return []
 
 
 def enabled(cfg: Dict[str, Any], *keys, default=False) -> bool:

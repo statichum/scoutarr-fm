@@ -15,7 +15,7 @@ MB_HEADERS = {
     "User-Agent": "Scoutarr-fm/1.0"
 }
 
-CONFIG_DIR = "/config"
+from config_loader import list_config_files
 
 def get_mb_sleep(mb_url):
     if "musicbrainz.org" in mb_url:
@@ -547,19 +547,15 @@ def main():
         run_single(mbid, int(score), user, artist, title)
         return
 
-    configs = [
-        os.path.join(CONFIG_DIR, f)
-        for f in os.listdir(CONFIG_DIR)
-        if f.endswith("-config.yaml")
-    ]
+    configs = list_config_files()
+
 
     if not configs:
         log("No config files found.")
         return
 
     for config_path in sorted(configs):
-        run_config(config_path)
-
+        run_config(str(config_path))
 
 
 # -------------------------
@@ -570,13 +566,9 @@ def main():
 def run_single(track_mbid, score, plex_user, artist, title):
     log(f"\n=== SINGLE TRACK MODE ===")
     log(f"Track MBID: {track_mbid}, Score: {score}\n")
-    log(f"[DEBUG] CONFIG_DIR = {CONFIG_DIR}")
 
-    configs = [
-        os.path.join(CONFIG_DIR, f)
-        for f in os.listdir(CONFIG_DIR)
-        if f.endswith("-config.yaml")
-    ]
+    configs = list_config_files()
+
 
     for config_path in configs:
         log(f"[DEBUG] Loading config: {config_path}")
