@@ -20,6 +20,16 @@ Scoutarr.fm is a CLI tool for Lidarr, Plex/Plexamp and Listenbrainz users (no po
 
 # 1.0 Create docker compose file:
 
+Create directory and compose file
+
+```
+mkdir scoutarr-fm
+cd scoutarr-fm
+nano docker-compose.yml
+```
+
+Set up compose, paste this into the file:
+
 ```
 services:
   scoutarr:
@@ -63,11 +73,10 @@ nano config-swedishgary.yaml
 # 3.0 Set plex webook
 
 Go to Plex > Settings > Webhooks
-Set your Scputarr url here
+Set your Scputarr url here:
 
-'''
-http://localhost:8787/webhook
-'''
+- http://localhost:8787/webhook
+
 
 # 4.0 First run
 
