@@ -1,2 +1,5 @@
 requests
 PyYAML
+fastapi
+uvicorn
+python-multipart
