@@ -1,0 +1,1578 @@
+------------Debug log started ini=0 level=4-----
+Sat Apr 11 16:02:16.967 2026 : CtMain::main processing for command=/ c 0 show all 
+Sat Apr 11 16:02:16.969 2026 : Entering LinuxControllerExplorer::explore 
+Sat Apr 11 16:02:16.969 2026 : Entering LinuxControllerExplorer::getCtrlCount
+Sat Apr 11 16:02:16.969 2026 : LinuxControllerExplorer::getCtrlCount _hDvr=-1 _hDvrSwr =-1
+Sat Apr 11 16:02:16.969 2026 : LinuxControllerExplorer::explore ctrlCount=1
+Sat Apr 11 16:02:16.969 2026 : returning LinuxControllerExplorer::explore ctrlIdListPtr
+Sat Apr 11 16:02:16.969 2026 : SlItControllerExplorer::explore - Entering
+Sat Apr 11 16:02:16.969 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:16.970 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:16.970 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:16.970 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:16.970 2026 : SlItControllerExplorer::explore - Getting the StoreLIB instance for SAS3.5 IT controller
+Sat Apr 11 16:02:16.970 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.043 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.043 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT
+Sat Apr 11 16:02:17.043 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.043 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.044 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT - retCode:0x0
+Sat Apr 11 16:02:17.044 2026 : SlItControllerExplorer::explore - Controller count:1
+Sat Apr 11 16:02:17.044 2026 : SlItControllerExplorer::explore - Controller count index:0
+Sat Apr 11 16:02:17.044 2026 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT
+Sat Apr 11 16:02:17.044 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.045 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.045 2026 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT - retCode:0x0
+Sat Apr 11 16:02:17.045 2026 : SlItControllerExplorer::explore - Domain:0 Bus:10 device:0 Function:0
+Sat Apr 11 16:02:17.045 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT
+Sat Apr 11 16:02:17.045 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.045 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.045 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT - retCode:0x0
+Sat Apr 11 16:02:17.045 2026 : SlItControllerExplorer::explore - Adapter is good
+Sat Apr 11 16:02:17.045 2026 : LinuxMfiDataProvider::fireIoctl DCMD=1010000 mbox.w[0]=1 mbox.w[1]=0 mbox.w[2]=0
+Sat Apr 11 16:02:17.045 2026 : LinuxMfiDataProvider::fireIoctl send_ioctl retcode=-1 cmdStatus=255
+Sat Apr 11 16:02:17.045 2026 : LinuxMfiDataProvider::fireIoctl returning with =-1 errno=9
+Sat Apr 11 16:02:17.045 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.046 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.046 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.047 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.049 2026 : Entering MWCliRootCp::process ver=007.2705.0000.0000 August 24, 2023 copyright=2023
+Sat Apr 11 16:02:17.049 2026 : initializing the RaidManager Instance 
+Sat Apr 11 16:02:17.049 2026 : Entering ITSwCtAlCp::process
+Sat Apr 11 16:02:17.049 2026 : ITSwCtAlCp::process - Retreiving basic controller info
+Sat Apr 11 16:02:17.049 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.049 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.050 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.050 2026 : Entering ITUtils::GetManufacturingPage5
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.050 2026 : Exiting ITUtils::GetManufacturingPage5
+Sat Apr 11 16:02:17.050 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.051 2026 : ITSwCtAlCp::process - Retreiving version info
+Sat Apr 11 16:02:17.051 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.051 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.051 2026 : ITSwCtAlCp::process - Retreiving controller BUS info
+Sat Apr 11 16:02:17.051 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.051 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.052 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.052 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.052 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.053 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.053 2026 : ITSwCtAlCp::process - Retreiving pending images info
+Sat Apr 11 16:02:17.053 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.053 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.053 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.053 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.053 2026 : ITSwCtAlCp::process - Retreiving status of the contrller
+Sat Apr 11 16:02:17.053 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.053 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.054 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.054 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.054 2026 : ITSwCtAlCp::process - Retreiving supported adapter operations
+Sat Apr 11 16:02:17.054 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.054 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.055 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.055 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.055 2026 : ITSwCtAlCp::process - Retreiving hardware configuration
+Sat Apr 11 16:02:17.055 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.055 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.055 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.055 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.055 2026 : ITSwCtAlCp::process - Retreiving controller policies
+Sat Apr 11 16:02:17.055 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.055 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.056 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.056 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.056 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.056 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.056 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.056 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.056 2026 : ITSwCtAlCp::process - Retreiving Boot information
+Sat Apr 11 16:02:17.056 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.056 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.057 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.057 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.057 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.057 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.057 2026 : ITSwCtAlCp::process - Retreiving controller defaults
+Sat Apr 11 16:02:17.057 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.057 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.057 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.057 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.057 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.057 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 16:02:17.058 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.058 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.058 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.058 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.058 2026 : ITSwCtAlCp::process - Retreiving controller capabilities
+Sat Apr 11 16:02:17.058 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.058 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.059 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.059 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.059 2026 : Entering GetCLIEnclListFunc removePartner=1
+Sat Apr 11 16:02:17.059 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.059 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.059 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.059 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.059 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.060 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.060 2026 : GetCLIEnclListFunc processing eDevID=0 connIdx=255 pos=0
+Sat Apr 11 16:02:17.060 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 16:02:17.060 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.060 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.060 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.060 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.060 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.060 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.061 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.061 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.061 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.061 2026 : Entering ITUtils::GetInquiryData
+Sat Apr 11 16:02:17.061 2026 : Exiting ITUtils::GetInquiryData
+Sat Apr 11 16:02:17.061 2026 : ITSwCtAlCp::process - Retreiving drive information
+Sat Apr 11 16:02:17.061 2026 : Entering ITUtils::GetPdList
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.061 2026 : Exiting ITUtils::GetPdList
+Sat Apr 11 16:02:17.061 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.061 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.061 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::readInquiryData targetId=0 scsiDevType=2
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.062 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.062 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.062 2026 : Entering ITUtils::getPdInfo for devid=5
+Sat Apr 11 16:02:17.062 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.067 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.067 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.067 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.067 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.068 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.068 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.068 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.068 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.068 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.068 2026 : Entering ITUtils::readInquiryData targetId=5 scsiDevType=2
+Sat Apr 11 16:02:17.068 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.069 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.069 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.069 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.069 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.069 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.069 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.070 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.070 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.070 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.070 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.070 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.070 2026 : Entering ITUtils::readInquiryData targetId=5 scsiDevType=2
+Sat Apr 11 16:02:17.070 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.070 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.070 2026 : ITUtils::slGetPdInfo  deviceId=5 scsiDevType =0
+Sat Apr 11 16:02:17.071 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 16:02:17.071 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.071 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.071 2026 : Entering ITUtils::getWWN
+Sat Apr 11 16:02:17.071 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.071 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.072 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.072 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.072 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName - Drive DevId:5 enclosure DevId:0
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 16:02:17.072 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.072 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.072 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.072 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.072 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.072 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.072 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.072 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 16:02:17.072 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:2 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:4
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - DeviceId:5 connectedPortNumbers:0x04 interface:2
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.073 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.073 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - connectedPortNumbers:4 connectorCount:4
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 16:02:17.073 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 16:02:17.073 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.074 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.074 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.074 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - Drive deviceID=5 index=2 name=C2  
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getConnectorName - Drive deviceID=5 connname=C2   x1 exiting
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getPDConnectorName Drive deviceID=5 path0=1, path1=0 name1=C2   x1, name2=
+Sat Apr 11 16:02:17.074 2026 : ITUtils::getPDConnectorName Drive deviceID=5 connName=C2   x1
+Sat Apr 11 16:02:17.074 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C2   x1
+Sat Apr 11 16:02:17.074 2026 : Entering ITUtils::slGetPdInfo deviceId=5
+Sat Apr 11 16:02:17.074 2026 : Entering ITUtils::getPdInfo for devid=5
+Sat Apr 11 16:02:17.074 2026 : ITUtils::slGetPdInfo  pdfwstate=5 scsiDevType =0
+Sat Apr 11 16:02:17.074 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 16:02:17.074 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.074 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.075 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.075 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.075 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 16:02:17.075 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.075 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.075 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.075 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.075 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.075 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.075 2026 : Entering ITUtils::getPdInfo for devid=1
+Sat Apr 11 16:02:17.075 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.140 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.140 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.140 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.140 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.141 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.141 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.141 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.141 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.141 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.141 2026 : Entering ITUtils::readInquiryData targetId=1 scsiDevType=2
+Sat Apr 11 16:02:17.141 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.142 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.142 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.142 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.142 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.142 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.142 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.143 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.143 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.143 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.143 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.143 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.143 2026 : Entering ITUtils::readInquiryData targetId=1 scsiDevType=2
+Sat Apr 11 16:02:17.143 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.143 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.143 2026 : ITUtils::slGetPdInfo  deviceId=1 scsiDevType =0
+Sat Apr 11 16:02:17.144 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 16:02:17.144 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.144 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.144 2026 : Entering ITUtils::getWWN
+Sat Apr 11 16:02:17.144 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.144 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.144 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.144 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.144 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - Drive DevId:1 enclosure DevId:0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 16:02:17.145 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.145 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.145 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.145 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - DeviceId:1 connectedPortNumbers:0x00 interface:2
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.145 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - connectedPortNumbers:0 connectorCount:4
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 16:02:17.145 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 16:02:17.146 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.147 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.147 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.147 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - Drive deviceID=1 index=3 name=C3  
+
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getConnectorName - Drive deviceID=1 connname=C3   x1 exiting
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getPDConnectorName Drive deviceID=1 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 16:02:17.147 2026 : ITUtils::getPDConnectorName Drive deviceID=1 connName=C3   x1
+Sat Apr 11 16:02:17.147 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 16:02:17.147 2026 : Entering ITUtils::slGetPdInfo deviceId=1
+Sat Apr 11 16:02:17.147 2026 : Entering ITUtils::getPdInfo for devid=1
+Sat Apr 11 16:02:17.147 2026 : ITUtils::slGetPdInfo  pdfwstate=1 scsiDevType =0
+Sat Apr 11 16:02:17.147 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 16:02:17.147 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.147 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.148 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.148 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.148 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 16:02:17.148 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.148 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.148 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.148 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.149 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.149 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.149 2026 : Entering ITUtils::getPdInfo for devid=2
+Sat Apr 11 16:02:17.149 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.155 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.155 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.155 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.155 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.156 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.156 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.156 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.185 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.185 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.185 2026 : Entering ITUtils::readInquiryData targetId=2 scsiDevType=2
+Sat Apr 11 16:02:17.185 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.192 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.192 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.192 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.192 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.192 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.192 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.193 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.193 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.193 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.194 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.194 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.194 2026 : Entering ITUtils::readInquiryData targetId=2 scsiDevType=2
+Sat Apr 11 16:02:17.194 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.196 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.196 2026 : ITUtils::slGetPdInfo  deviceId=2 scsiDevType =0
+Sat Apr 11 16:02:17.196 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 16:02:17.196 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.197 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.197 2026 : Entering ITUtils::getWWN
+Sat Apr 11 16:02:17.197 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.197 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.198 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.198 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.198 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 16:02:17.198 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 16:02:17.198 2026 : ITUtils::getPDConnectorName - Drive DevId:2 enclosure DevId:0
+Sat Apr 11 16:02:17.198 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 16:02:17.198 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.198 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.198 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.199 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.199 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:1
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - DeviceId:2 connectedPortNumbers:0x01 interface:2
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - connectedPortNumbers:1 connectorCount:4
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 16:02:17.199 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 16:02:17.199 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.200 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.200 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.200 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.200 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getConnectorName - Drive deviceID=2 index=3 name=C3  
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getConnectorName - Drive deviceID=2 connname=C3   x1 exiting
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getPDConnectorName Drive deviceID=2 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 16:02:17.201 2026 : ITUtils::getPDConnectorName Drive deviceID=2 connName=C3   x1
+Sat Apr 11 16:02:17.201 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 16:02:17.201 2026 : Entering ITUtils::slGetPdInfo deviceId=2
+Sat Apr 11 16:02:17.201 2026 : Entering ITUtils::getPdInfo for devid=2
+Sat Apr 11 16:02:17.201 2026 : ITUtils::slGetPdInfo  pdfwstate=2 scsiDevType =0
+Sat Apr 11 16:02:17.201 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 16:02:17.201 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.201 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.201 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.201 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.201 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 16:02:17.201 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.201 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.201 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.201 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.202 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.202 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.202 2026 : Entering ITUtils::getPdInfo for devid=3
+Sat Apr 11 16:02:17.202 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.225 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.225 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.225 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.225 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.226 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.226 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.226 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.226 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.226 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.226 2026 : Entering ITUtils::readInquiryData targetId=3 scsiDevType=2
+Sat Apr 11 16:02:17.226 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.227 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.227 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.227 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.227 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.227 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.227 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.228 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.228 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.228 2026 : Entering ITUtils::readInquiryData targetId=3 scsiDevType=2
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.228 2026 : ITUtils::slGetPdInfo  deviceId=3 scsiDevType =0
+Sat Apr 11 16:02:17.228 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 16:02:17.228 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.229 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.229 2026 : Entering ITUtils::getWWN
+Sat Apr 11 16:02:17.229 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.229 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.229 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.229 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.229 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 16:02:17.229 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 16:02:17.229 2026 : ITUtils::getPDConnectorName - Drive DevId:3 enclosure DevId:0
+Sat Apr 11 16:02:17.229 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 16:02:17.229 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.229 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.229 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.230 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.230 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:2
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - DeviceId:3 connectedPortNumbers:0x02 interface:2
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - connectedPortNumbers:2 connectorCount:4
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 16:02:17.230 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 16:02:17.230 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - Drive deviceID=3 index=3 name=C3  
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getConnectorName - Drive deviceID=3 connname=C3   x1 exiting
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getPDConnectorName Drive deviceID=3 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 16:02:17.232 2026 : ITUtils::getPDConnectorName Drive deviceID=3 connName=C3   x1
+Sat Apr 11 16:02:17.232 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 16:02:17.232 2026 : Entering ITUtils::slGetPdInfo deviceId=3
+Sat Apr 11 16:02:17.232 2026 : Entering ITUtils::getPdInfo for devid=3
+Sat Apr 11 16:02:17.232 2026 : ITUtils::slGetPdInfo  pdfwstate=3 scsiDevType =0
+Sat Apr 11 16:02:17.232 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 16:02:17.232 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.232 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.232 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 16:02:17.232 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.232 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.232 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.232 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.233 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.233 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.233 2026 : Entering ITUtils::getPdInfo for devid=4
+Sat Apr 11 16:02:17.233 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.238 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.238 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 16:02:17.238 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.238 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.239 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.239 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 16:02:17.239 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.239 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.239 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 16:02:17.239 2026 : Entering ITUtils::readInquiryData targetId=4 scsiDevType=2
+Sat Apr 11 16:02:17.239 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.240 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.240 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 16:02:17.240 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 16:02:17.240 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.240 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.240 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.240 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.240 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.240 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.241 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.241 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.241 2026 : Entering ITUtils::readInquiryData targetId=4 scsiDevType=2
+Sat Apr 11 16:02:17.241 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.241 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.241 2026 : ITUtils::slGetPdInfo  deviceId=4 scsiDevType =0
+Sat Apr 11 16:02:17.241 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 16:02:17.241 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.242 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.242 2026 : Entering ITUtils::getWWN
+Sat Apr 11 16:02:17.242 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.242 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.242 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.242 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 16:02:17.242 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 16:02:17.242 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 16:02:17.242 2026 : ITUtils::getPDConnectorName - Drive DevId:4 enclosure DevId:0
+Sat Apr 11 16:02:17.242 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 16:02:17.242 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 16:02:17.242 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.242 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.243 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.243 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:3
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - DeviceId:4 connectedPortNumbers:0x03 interface:2
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - connectedPortNumbers:3 connectorCount:4
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 16:02:17.243 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 16:02:17.243 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.245 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 16:02:17.245 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.245 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - Drive deviceID=4 index=3 name=C3  
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getConnectorName - Drive deviceID=4 connname=C3   x1 exiting
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getPDConnectorName Drive deviceID=4 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 16:02:17.245 2026 : ITUtils::getPDConnectorName Drive deviceID=4 connName=C3   x1
+Sat Apr 11 16:02:17.245 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 16:02:17.245 2026 : Entering ITUtils::slGetPdInfo deviceId=4
+Sat Apr 11 16:02:17.245 2026 : Entering ITUtils::getPdInfo for devid=4
+Sat Apr 11 16:02:17.245 2026 : ITUtils::slGetPdInfo  pdfwstate=4 scsiDevType =0
+Sat Apr 11 16:02:17.245 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 16:02:17.245 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.245 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.246 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.246 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 16:02:17.246 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 16:02:17.246 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 16:02:17.246 2026 : Exiting ITSwCtAlCp::process - retCode:0
+Sat Apr 11 16:02:17.246 2026 : MWCliRootCp::process processed for subtokenID=47 errorCode=0
+Sat Apr 11 16:02:17.246 2026 : Entering MWCliRootCp::handleOuput retCode=0, DriveFull=0
+Sat Apr 11 16:02:17.248 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.251 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.251 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 16:02:17.251 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 16:02:17.251 2026 : CtMain::main command completed with retcode=0
+
+------------Debug log started ini=0 level=4-----
+Sat Apr 11 18:05:56.722 2026 : CtMain::main processing for command=/ c 0 show all 
+Sat Apr 11 18:05:56.723 2026 : Entering LinuxControllerExplorer::explore 
+Sat Apr 11 18:05:56.723 2026 : Entering LinuxControllerExplorer::getCtrlCount
+Sat Apr 11 18:05:56.724 2026 : LinuxControllerExplorer::getCtrlCount _hDvr=-1 _hDvrSwr =-1
+Sat Apr 11 18:05:56.724 2026 : LinuxControllerExplorer::explore ctrlCount=1
+Sat Apr 11 18:05:56.724 2026 : returning LinuxControllerExplorer::explore ctrlIdListPtr
+Sat Apr 11 18:05:56.724 2026 : SlItControllerExplorer::explore - Entering
+Sat Apr 11 18:05:56.724 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.724 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.724 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.724 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.724 2026 : SlItControllerExplorer::explore - Getting the StoreLIB instance for SAS3.5 IT controller
+Sat Apr 11 18:05:56.724 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_LIST to SLIT - retCode:0x0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Controller count:1
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Controller count index:0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Issuing SL_GET_PCI_INFO to SLIT - retCode:0x0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Domain:0 Bus:10 device:0 Function:0
+Sat Apr 11 18:05:56.800 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT
+Sat Apr 11 18:05:56.800 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.801 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.801 2026 : SlItControllerExplorer::explore - Issuing SL_GET_CTRL_INFO to SLIT - retCode:0x0
+Sat Apr 11 18:05:56.801 2026 : SlItControllerExplorer::explore - Adapter is good
+Sat Apr 11 18:05:56.801 2026 : LinuxMfiDataProvider::fireIoctl DCMD=1010000 mbox.w[0]=1 mbox.w[1]=0 mbox.w[2]=0
+Sat Apr 11 18:05:56.801 2026 : LinuxMfiDataProvider::fireIoctl send_ioctl retcode=-1 cmdStatus=255
+Sat Apr 11 18:05:56.801 2026 : LinuxMfiDataProvider::fireIoctl returning with =-1 errno=9
+Sat Apr 11 18:05:56.801 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.802 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.802 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.802 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.804 2026 : Entering MWCliRootCp::process ver=007.2705.0000.0000 August 24, 2023 copyright=2023
+Sat Apr 11 18:05:56.804 2026 : initializing the RaidManager Instance 
+Sat Apr 11 18:05:56.805 2026 : Entering ITSwCtAlCp::process
+Sat Apr 11 18:05:56.805 2026 : ITSwCtAlCp::process - Retreiving basic controller info
+Sat Apr 11 18:05:56.805 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.805 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.805 2026 : Entering ITUtils::GetManufacturingPage5
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.805 2026 : Exiting ITUtils::GetManufacturingPage5
+Sat Apr 11 18:05:56.805 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.806 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.806 2026 : ITSwCtAlCp::process - Retreiving version info
+Sat Apr 11 18:05:56.806 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.806 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.807 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.807 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.807 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.807 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.807 2026 : ITSwCtAlCp::process - Retreiving controller BUS info
+Sat Apr 11 18:05:56.807 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.807 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.808 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.808 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.808 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.809 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.809 2026 : ITSwCtAlCp::process - Retreiving pending images info
+Sat Apr 11 18:05:56.809 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.809 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.809 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.809 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.809 2026 : ITSwCtAlCp::process - Retreiving status of the contrller
+Sat Apr 11 18:05:56.809 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.809 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.810 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.810 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.810 2026 : ITSwCtAlCp::process - Retreiving supported adapter operations
+Sat Apr 11 18:05:56.810 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.810 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.810 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.810 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.810 2026 : ITSwCtAlCp::process - Retreiving hardware configuration
+Sat Apr 11 18:05:56.810 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.810 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.811 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.811 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.811 2026 : ITSwCtAlCp::process - Retreiving controller policies
+Sat Apr 11 18:05:56.811 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.811 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.812 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.812 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.812 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.812 2026 : ITSwCtAlCp::process - Retreiving Boot information
+Sat Apr 11 18:05:56.812 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.812 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.812 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.812 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.812 2026 : ITSwCtAlCp::process - Retreiving controller defaults
+Sat Apr 11 18:05:56.812 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.812 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.813 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.813 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.813 2026 : Entering ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.813 2026 : Exiting ITUtils::getSlCtrlProp
+Sat Apr 11 18:05:56.813 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.813 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.814 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.814 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.814 2026 : ITSwCtAlCp::process - Retreiving controller capabilities
+Sat Apr 11 18:05:56.814 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.814 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.814 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.814 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.814 2026 : Entering GetCLIEnclListFunc removePartner=1
+Sat Apr 11 18:05:56.814 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.814 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.815 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.815 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.815 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.815 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.815 2026 : GetCLIEnclListFunc processing eDevID=0 connIdx=255 pos=0
+Sat Apr 11 18:05:56.815 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 18:05:56.815 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.816 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.816 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:56.816 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:56.816 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.816 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.816 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.816 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.816 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 18:05:56.816 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.817 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:56.817 2026 : Entering ITUtils::GetInquiryData
+Sat Apr 11 18:05:56.817 2026 : Exiting ITUtils::GetInquiryData
+Sat Apr 11 18:05:56.817 2026 : ITSwCtAlCp::process - Retreiving drive information
+Sat Apr 11 18:05:56.817 2026 : Entering ITUtils::GetPdList
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.817 2026 : Exiting ITUtils::GetPdList
+Sat Apr 11 18:05:56.817 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:56.817 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.817 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.817 2026 : Entering ITUtils::getPdInfo for devid=0
+Sat Apr 11 18:05:56.817 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.818 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:56.818 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.818 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.818 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:56.818 2026 : Entering ITUtils::readInquiryData targetId=0 scsiDevType=2
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.818 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:56.818 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:56.818 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:56.818 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:56.818 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:56.818 2026 : Entering ITUtils::getPdInfo for devid=5
+Sat Apr 11 18:05:56.818 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.085 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.085 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:57.085 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.085 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.085 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.085 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:57.085 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.086 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.086 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:57.086 2026 : Entering ITUtils::readInquiryData targetId=5 scsiDevType=2
+Sat Apr 11 18:05:57.086 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.086 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.086 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:57.086 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.086 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.086 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.086 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.087 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.087 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.087 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.087 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.087 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.087 2026 : Entering ITUtils::readInquiryData targetId=5 scsiDevType=2
+Sat Apr 11 18:05:57.087 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.087 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.087 2026 : ITUtils::slGetPdInfo  deviceId=5 scsiDevType =0
+Sat Apr 11 18:05:57.088 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 18:05:57.088 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.088 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.088 2026 : Entering ITUtils::getWWN
+Sat Apr 11 18:05:57.088 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.088 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.089 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.089 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.089 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 18:05:57.089 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 18:05:57.089 2026 : ITUtils::getPDConnectorName - Drive DevId:5 enclosure DevId:0
+Sat Apr 11 18:05:57.089 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 18:05:57.089 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.089 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.089 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.089 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.089 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.089 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.090 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.090 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:2 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:4
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - DeviceId:5 connectedPortNumbers:0x04 interface:2
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.090 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.090 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - connectedPortNumbers:4 connectorCount:4
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 18:05:57.090 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 18:05:57.090 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.091 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.091 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.091 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - Drive deviceID=5 index=2 name=C2  
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getConnectorName - Drive deviceID=5 connname=C2   x1 exiting
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getPDConnectorName Drive deviceID=5 path0=1, path1=0 name1=C2   x1, name2=
+Sat Apr 11 18:05:57.091 2026 : ITUtils::getPDConnectorName Drive deviceID=5 connName=C2   x1
+Sat Apr 11 18:05:57.091 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C2   x1
+Sat Apr 11 18:05:57.091 2026 : Entering ITUtils::slGetPdInfo deviceId=5
+Sat Apr 11 18:05:57.091 2026 : Entering ITUtils::getPdInfo for devid=5
+Sat Apr 11 18:05:57.091 2026 : ITUtils::slGetPdInfo  pdfwstate=5 scsiDevType =0
+Sat Apr 11 18:05:57.091 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 18:05:57.091 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.091 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.092 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.092 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.092 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 18:05:57.092 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.092 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.092 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.092 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.093 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.093 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.093 2026 : Entering ITUtils::getPdInfo for devid=1
+Sat Apr 11 18:05:57.093 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.112 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.112 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:57.112 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.112 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.112 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.112 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:57.112 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.113 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.113 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:57.113 2026 : Entering ITUtils::readInquiryData targetId=1 scsiDevType=2
+Sat Apr 11 18:05:57.113 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.113 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.113 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:57.113 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.113 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.113 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.113 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.114 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.114 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.114 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.114 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.114 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.114 2026 : Entering ITUtils::readInquiryData targetId=1 scsiDevType=2
+Sat Apr 11 18:05:57.114 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.115 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.115 2026 : ITUtils::slGetPdInfo  deviceId=1 scsiDevType =0
+Sat Apr 11 18:05:57.115 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 18:05:57.115 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.115 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.115 2026 : Entering ITUtils::getWWN
+Sat Apr 11 18:05:57.115 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.115 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.116 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.116 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.116 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 18:05:57.116 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 18:05:57.116 2026 : ITUtils::getPDConnectorName - Drive DevId:1 enclosure DevId:0
+Sat Apr 11 18:05:57.116 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 18:05:57.116 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.116 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.116 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.116 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.116 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.116 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.117 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.117 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:0
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - DeviceId:1 connectedPortNumbers:0x00 interface:2
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.117 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.117 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - connectedPortNumbers:0 connectorCount:4
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 18:05:57.117 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 18:05:57.117 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.118 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.118 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.118 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - Drive deviceID=1 index=3 name=C3  
+
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getConnectorName - Drive deviceID=1 connname=C3   x1 exiting
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getPDConnectorName Drive deviceID=1 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 18:05:57.118 2026 : ITUtils::getPDConnectorName Drive deviceID=1 connName=C3   x1
+Sat Apr 11 18:05:57.118 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 18:05:57.118 2026 : Entering ITUtils::slGetPdInfo deviceId=1
+Sat Apr 11 18:05:57.118 2026 : Entering ITUtils::getPdInfo for devid=1
+Sat Apr 11 18:05:57.118 2026 : ITUtils::slGetPdInfo  pdfwstate=1 scsiDevType =0
+Sat Apr 11 18:05:57.118 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 18:05:57.118 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.118 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.119 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.119 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.119 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 18:05:57.119 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.119 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.119 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.119 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.120 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.120 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.120 2026 : Entering ITUtils::getPdInfo for devid=2
+Sat Apr 11 18:05:57.120 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.129 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.129 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:57.129 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.129 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.130 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.130 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:57.130 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.130 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.130 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:57.130 2026 : Entering ITUtils::readInquiryData targetId=2 scsiDevType=2
+Sat Apr 11 18:05:57.130 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.131 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.131 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:57.131 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.131 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.131 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.131 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.131 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.131 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.131 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.132 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.132 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.132 2026 : Entering ITUtils::readInquiryData targetId=2 scsiDevType=2
+Sat Apr 11 18:05:57.132 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.132 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.132 2026 : ITUtils::slGetPdInfo  deviceId=2 scsiDevType =0
+Sat Apr 11 18:05:57.132 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 18:05:57.132 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.133 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.133 2026 : Entering ITUtils::getWWN
+Sat Apr 11 18:05:57.133 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.133 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.133 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.133 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.133 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 18:05:57.133 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 18:05:57.133 2026 : ITUtils::getPDConnectorName - Drive DevId:2 enclosure DevId:0
+Sat Apr 11 18:05:57.133 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 18:05:57.133 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.133 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.133 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.134 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.134 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:1
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - DeviceId:2 connectedPortNumbers:0x01 interface:2
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - connectedPortNumbers:1 connectorCount:4
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 18:05:57.134 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 18:05:57.134 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - Drive deviceID=2 index=3 name=C3  
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getConnectorName - Drive deviceID=2 connname=C3   x1 exiting
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getPDConnectorName Drive deviceID=2 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 18:05:57.136 2026 : ITUtils::getPDConnectorName Drive deviceID=2 connName=C3   x1
+Sat Apr 11 18:05:57.136 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 18:05:57.136 2026 : Entering ITUtils::slGetPdInfo deviceId=2
+Sat Apr 11 18:05:57.136 2026 : Entering ITUtils::getPdInfo for devid=2
+Sat Apr 11 18:05:57.136 2026 : ITUtils::slGetPdInfo  pdfwstate=2 scsiDevType =0
+Sat Apr 11 18:05:57.136 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 18:05:57.136 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.136 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.136 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 18:05:57.136 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.136 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.136 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.136 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.137 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.137 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.137 2026 : Entering ITUtils::getPdInfo for devid=3
+Sat Apr 11 18:05:57.137 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.151 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.151 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:57.151 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.151 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.152 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.152 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:57.152 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.152 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.152 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:57.152 2026 : Entering ITUtils::readInquiryData targetId=3 scsiDevType=2
+Sat Apr 11 18:05:57.152 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.153 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.153 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:57.153 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.153 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.153 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.153 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.154 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.154 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.154 2026 : Entering ITUtils::readInquiryData targetId=3 scsiDevType=2
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.154 2026 : ITUtils::slGetPdInfo  deviceId=3 scsiDevType =0
+Sat Apr 11 18:05:57.154 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 18:05:57.154 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.155 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.155 2026 : Entering ITUtils::getWWN
+Sat Apr 11 18:05:57.155 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.155 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.155 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.155 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.155 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 18:05:57.155 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 18:05:57.155 2026 : ITUtils::getPDConnectorName - Drive DevId:3 enclosure DevId:0
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 18:05:57.156 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.156 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.156 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.156 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:2
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - DeviceId:3 connectedPortNumbers:0x02 interface:2
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.156 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - connectedPortNumbers:2 connectorCount:4
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 18:05:57.156 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 18:05:57.157 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.158 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.158 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.158 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - Drive deviceID=3 index=3 name=C3  
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getConnectorName - Drive deviceID=3 connname=C3   x1 exiting
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getPDConnectorName Drive deviceID=3 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 18:05:57.158 2026 : ITUtils::getPDConnectorName Drive deviceID=3 connName=C3   x1
+Sat Apr 11 18:05:57.158 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 18:05:57.158 2026 : Entering ITUtils::slGetPdInfo deviceId=3
+Sat Apr 11 18:05:57.158 2026 : Entering ITUtils::getPdInfo for devid=3
+Sat Apr 11 18:05:57.158 2026 : ITUtils::slGetPdInfo  pdfwstate=3 scsiDevType =0
+Sat Apr 11 18:05:57.158 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 18:05:57.158 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.158 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.159 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.159 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.159 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 18:05:57.159 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.159 2026 : Entering ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.159 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.159 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.159 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.159 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.159 2026 : Entering ITUtils::getPdInfo for devid=4
+Sat Apr 11 18:05:57.159 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.170 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.170 2026 : Exiting ITUtils::getPdInfo
+Sat Apr 11 18:05:57.170 2026 : Entering ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.170 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.170 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.170 2026 : ITUtils::GetPDLunInfo header req retCode = 0 80
+Sat Apr 11 18:05:57.170 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.171 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.171 2026 : ITUtils::GetPDLunInfo fullReq retCode = 0 passthruBufferLen=80
+Sat Apr 11 18:05:57.171 2026 : Entering ITUtils::readInquiryData targetId=4 scsiDevType=2
+Sat Apr 11 18:05:57.171 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.171 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.171 2026 : ITUtils::GetPDLunInfo idx=0 LunVal=0
+Sat Apr 11 18:05:57.171 2026 : Exiting ITUtils::GetPDLunInfo
+Sat Apr 11 18:05:57.171 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.171 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.171 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.172 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.172 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.172 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.172 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.172 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.172 2026 : Entering ITUtils::readInquiryData targetId=4 scsiDevType=2
+Sat Apr 11 18:05:57.172 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.172 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.172 2026 : ITUtils::slGetPdInfo  deviceId=4 scsiDevType =0
+Sat Apr 11 18:05:57.173 2026 : Entering (PdDataMfi::slReadUnitSerialPage) 
+Sat Apr 11 18:05:57.173 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.173 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.173 2026 : Entering ITUtils::getWWN
+Sat Apr 11 18:05:57.173 2026 : Entering ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.173 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.173 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.173 2026 : Exiting ITUtils::getVPDPage83
+Sat Apr 11 18:05:57.173 2026 : Exiting ITUtils::getWWN
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName Entering
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - Drive DevId:4 enclosure DevId:0
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - Calling GetCLIEnclListFunc
+Sat Apr 11 18:05:57.174 2026 : Entering GetCLIEnclListFunc removePartner=0
+Sat Apr 11 18:05:57.174 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.174 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.174 2026 : Exiting GetCLIEnclListFunc enclCount=1
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - GetCLIEnclListFunc - retCode:0 enclCount:1
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->deviceId:0
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - Enclosure match found!
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - ptrEnclInfo->type:2 ptrEnclInfo->subtype:5
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - pdInfo.pathInfo.connectorIndex[0]:3 pdInfo.pathInfo.connectorIndex[1]:255
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - ctrlHasMoreThan16Phys=1 ctrlHasMoreThan8Phys=1 
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getPDConnectorName - Non-incremented SASAddress - connectedPortNumbers:3
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName Entering
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - DeviceId:4 connectedPortNumbers:0x03 interface:2
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - Getting connectors
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - getConnectors retCode:0
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - Connector count:4
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - InterfaceType:2
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - connectedPortNumbers:3 connectorCount:4
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getConnectorName - Calling getSASPhyConnections
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getSASPhyConnections Entering
+Sat Apr 11 18:05:57.174 2026 : ITUtils::getSASPhyConnections - Sending request to SL
+Sat Apr 11 18:05:57.174 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.176 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getSASPhyConnections - SL returned:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - getSASPhyConnections retCode:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - PhyCount:16
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:4 sasPortNumberValid:1 connectorIndex:2
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:1 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:2 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:3 sasPortNumberValid:1 connectorIndex:3
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - sasPortNumber:0 sasPortNumberValid:0 connectorIndex:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - ConnIndexCount:1
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - Getting connector name based on index
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorNameStr Entering
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectors Entering
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectors - Sending request to SL
+Sat Apr 11 18:05:57.176 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.176 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectors - SL returned:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorNameStr getConnectors - retCode:0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorNameStr Exiting
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - Drive deviceID=4 index=3 name=C3  
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - isNvmeWidthsSupported:1
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getConnectorName - Drive deviceID=4 connname=C3   x1 exiting
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getPDConnectorName Drive deviceID=4 path0=1, path1=0 name1=C3   x1, name2=
+Sat Apr 11 18:05:57.176 2026 : ITUtils::getPDConnectorName Drive deviceID=4 connName=C3   x1
+Sat Apr 11 18:05:57.176 2026 : ITUtils::slPdInfoDetail - getPDConnectorName - str:C3   x1
+Sat Apr 11 18:05:57.176 2026 : Entering ITUtils::slGetPdInfo deviceId=4
+Sat Apr 11 18:05:57.176 2026 : Entering ITUtils::getPdInfo for devid=4
+Sat Apr 11 18:05:57.176 2026 : ITUtils::slGetPdInfo  pdfwstate=4 scsiDevType =0
+Sat Apr 11 18:05:57.176 2026 : ITUtils::slGetPdInfo  pdfwstate=64
+Sat Apr 11 18:05:57.176 2026 : Entering ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.176 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.176 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.176 2026 : Exiting ITUtils::getSlCtrlInfo
+Sat Apr 11 18:05:57.176 2026 : Exiting ITUtils::slGetPdInfo
+Sat Apr 11 18:05:57.176 2026 : Exiting ITUtils::slPdInfoDetail
+Sat Apr 11 18:05:57.177 2026 : Exiting ITSwCtAlCp::process - retCode:0
+Sat Apr 11 18:05:57.177 2026 : MWCliRootCp::process processed for subtokenID=47 errorCode=0
+Sat Apr 11 18:05:57.177 2026 : Entering MWCliRootCp::handleOuput retCode=0, DriveFull=0
+Sat Apr 11 18:05:57.178 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.182 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.182 2026 : StorelibItDp::processLibCommand SL request sent
+Sat Apr 11 18:05:57.182 2026 : StorelibItDp::processLibCommand SL responded with retcode=0
+Sat Apr 11 18:05:57.182 2026 : CtMain::main command completed with retcode=0
+

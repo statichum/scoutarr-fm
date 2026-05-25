@@ -108,6 +108,39 @@ def _plex_album_tracks(base, token, rk):
         ))
     return out
 
+def _plex_playlists(base, token):
+    root = _plex_xml(base, token, "/playlists")
+
+    out = []
+
+    for p in root.findall("Playlist"):
+        out.append({
+            "ratingKey": p.attrib.get("ratingKey"),
+            "title": p.attrib.get("title", ""),
+        })
+
+    return out
+
+
+def _plex_delete_playlist(base, token, rating_key):
+    requests.delete(
+        base.rstrip("/") + f"/playlists/{rating_key}",
+        headers={"X-Plex-Token": token},
+        timeout=30,
+    ).raise_for_status()
+
+
+def _playlist_week_sort_key(title):
+    m = re.search(r"W(\d+)\s+(\d{4})$", title)
+
+    if not m:
+        return None
+
+    week = int(m.group(1))
+    year = int(m.group(2))
+
+    return (year, week)
+
 
 # ------------------------------------------------------------
 # Matching
@@ -196,3 +229,39 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     ).raise_for_status()
 
     print(f"✓ Plex playlist created: {title}")
+
+
+    retention = int(plex.get("pl-retention", 4))
+
+    playlists = _plex_playlists(base, token)
+
+    scoutarr_playlists = []
+
+    for p in playlists:
+        if not p["title"].startswith(prefix):
+            continue
+
+        key = _playlist_week_sort_key(p["title"])
+
+        if not key:
+            continue
+
+        scoutarr_playlists.append((key, p))
+
+    scoutarr_playlists.sort(
+        key=lambda x: x[0],
+        reverse=True
+    )
+
+    old = scoutarr_playlists[retention:]
+
+    for _, p in old:
+        print(f"→ Removing old Plex playlist: {p['title']}")
+
+        _plex_delete_playlist(
+            base,
+            token,
+            p["ratingKey"]
+        )
+
+        print(f"✓ Removed: {p['title']}")

@@ -1,0 +1,68 @@
+{
+  "chris41304130": {
+    "weekly_playlists": {
+      "7ac141ff-fe13-4ab3-8ad9-cd8ac9d75873": {
+        "week_id": "2026-W20",
+        "title": "Weekly Exploration for chris41304130, week of 2026-05-11 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-05-13T04:13:48.625018+00:00"
+      },
+      "6605a9f6-3ebc-4759-8e75-b59d09888138": {
+        "week_id": "2026-W19",
+        "title": "Weekly Exploration for chris41304130, week of 2026-05-06 Wed",
+        "imported_to_lidarr": false,
+        "plex_created": true,
+        "first_seen": "2026-05-06T03:21:24.205442+00:00"
+      },
+      "abc1cca3-12b9-40c7-a2db-53d89bd3a61c": {
+        "week_id": "2026-W22",
+        "title": "Weekly Exploration for chris41304130, week of 2026-05-25 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-05-24T15:00:41.890264+00:00"
+      }
+    },
+    "created_plex_weeks": [
+      "2026-W19",
+      "2026-W20"
+    ],
+    "imported_lidarr_weeks": [
+      "2026-W20",
+      "2026-W22"
+    ]
+  },
+  "steve16974": {
+    "weekly_playlists": {
+      "03fce498-84e8-40aa-910c-8a9eae1f95a9": {
+        "week_id": "2026-W20",
+        "title": "Weekly Exploration for steve16974, week of 2026-05-11 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-05-13T04:13:48.625018+00:00"
+      },
+      "6fd52c1f-736a-44c7-bde6-8e11d5e60099": {
+        "week_id": "2026-W19",
+        "title": "Weekly Exploration for steve16974, week of 2026-05-06 Wed",
+        "imported_to_lidarr": false,
+        "plex_created": true,
+        "first_seen": "2026-05-06T03:21:24.205442+00:00"
+      },
+      "492a85ac-2eec-43ba-9f86-0aeb93c54aed": {
+        "week_id": "2026-W22",
+        "title": "Weekly Exploration for steve16974, week of 2026-05-25 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-05-24T15:00:41.890264+00:00"
+      }
+    },
+    "created_plex_weeks": [
+      "2026-W19",
+      "2026-W20"
+    ],
+    "imported_lidarr_weeks": [
+      "2026-W20",
+      "2026-W22"
+    ]
+  }
+}

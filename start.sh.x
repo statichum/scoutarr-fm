@@ -49,20 +49,9 @@ echo "[CRON CHECK] test execution complete"
 
 echo "Running initial full sync..."
 python3 /app/src/sync_ratings.py &
-SYNC_PID=$!
 
 echo "Starting queue worker..."
 python3 /app/src/queue_worker.py &
-QUEUE_PID=$!
 
 echo "Starting API..."
-uvicorn src.webhook:app --host 0.0.0.0 --port 8787 &
-UVICORN_PID=$!
-
-wait -n
-
-echo "A child process exited — shutting down..."
-
-kill $SYNC_PID $QUEUE_PID $UVICORN_PID 2>/dev/null || true
-
-wait
+exec uvicorn src.webhook:app --host 0.0.0.0 --port 8787

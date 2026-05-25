@@ -2,6 +2,7 @@ services:
   scoutarr:
     image: ghcr.io/statichum/scoutarr-fm
     container_name: scoutarr-fm
+    init: true
     logging:
       driver: "json-file"
       options:
@@ -9,6 +10,7 @@ services:
         max-file: "3"
     volumes:
       - ./config/:/config/
+      - ./state/:/state/
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
     ports:
