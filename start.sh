@@ -50,19 +50,35 @@ echo "[CRON CHECK] test execution complete"
 echo "Running initial full sync..."
 python3 /app/src/sync_ratings.py &
 SYNC_PID=$!
+echo "[STARTUP] sync_ratings.py started (pid=$SYNC_PID)"
 
 echo "Starting queue worker..."
 python3 /app/src/queue_worker.py &
 QUEUE_PID=$!
+echo "[STARTUP] queue_worker.py started (pid=$QUEUE_PID)"
 
 echo "Starting API..."
 uvicorn src.webhook:app --host 0.0.0.0 --port 8787 &
 UVICORN_PID=$!
+echo "[STARTUP] uvicorn started (pid=$UVICORN_PID)"
 
 wait -n
 
-echo "A child process exited — shutting down..."
+echo "[ERROR] A child process exited"
+
+for pid in $SYNC_PID $QUEUE_PID $UVICORN_PID; do
+    if kill -0 "$pid" 2>/dev/null; then
+        echo "[STATUS] pid=$pid is still running"
+    else
+        echo "[STATUS] pid=$pid has exited"
+    fi
+done
+
+echo "[PROCESS LIST]"
+ps aux
+
+echo "[SHUTDOWN] Terminating remaining processes..."
 
 kill $SYNC_PID $QUEUE_PID $UVICORN_PID 2>/dev/null || true
 
-wait
+wait || true
