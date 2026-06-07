@@ -9,16 +9,17 @@ log "Starting Scoutarr..."
 
 # Start cron
 log "Starting cron..."
-cron&
+cron &
 
-echo    (
-echo     \
-echo      )
-echo ##-------->        Scoutarr.fm
-echo      )
-echo     /
-echo    (
-
+cat <<'EOF'
+   (
+    \
+     )
+##-------->        Scoutarr.fm
+     )
+    /
+   (
+EOF
 
 
 # -------------------------
