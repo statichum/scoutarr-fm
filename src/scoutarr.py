@@ -27,8 +27,11 @@ USER_AGENT = "scoutarr.fm/0.6 (christuckey.uk)"
 # Helpers
 # ------------------------------------------------------------
 
+from datetime import datetime
+
 def log(msg: str):
-    print(msg, flush=True)
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
 
 
 def load_yaml(path: Path) -> Dict[str, Any]:

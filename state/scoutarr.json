@@ -19,17 +19,26 @@
         "week_id": "2026-W22",
         "title": "Weekly Exploration for chris41304130, week of 2026-05-25 Mon",
         "imported_to_lidarr": true,
-        "plex_created": false,
+        "plex_created": true,
         "first_seen": "2026-05-24T15:00:41.890264+00:00"
+      },
+      "1338caec-f39c-4121-8b04-1a3ca8623f76": {
+        "week_id": "2026-W23",
+        "title": "Weekly Exploration for chris41304130, week of 2026-06-01 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-06-01T10:13:31.566618+00:00"
       }
     },
     "created_plex_weeks": [
       "2026-W19",
-      "2026-W20"
+      "2026-W20",
+      "2026-W22"
     ],
     "imported_lidarr_weeks": [
       "2026-W20",
-      "2026-W22"
+      "2026-W22",
+      "2026-W23"
     ]
   },
   "steve16974": {
@@ -52,17 +61,26 @@
         "week_id": "2026-W22",
         "title": "Weekly Exploration for steve16974, week of 2026-05-25 Mon",
         "imported_to_lidarr": true,
-        "plex_created": false,
+        "plex_created": true,
         "first_seen": "2026-05-24T15:00:41.890264+00:00"
+      },
+      "6ee3d53c-e4ae-4698-96ae-1b47bc967dad": {
+        "week_id": "2026-W23",
+        "title": "Weekly Exploration for steve16974, week of 2026-06-01 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-06-01T10:13:33.595011+00:00"
       }
     },
     "created_plex_weeks": [
       "2026-W19",
-      "2026-W20"
+      "2026-W20",
+      "2026-W22"
     ],
     "imported_lidarr_weeks": [
       "2026-W20",
-      "2026-W22"
+      "2026-W22",
+      "2026-W23"
     ]
   }
 }
