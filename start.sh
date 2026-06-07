@@ -62,9 +62,24 @@ uvicorn src.webhook:app --host 0.0.0.0 --port 8787 &
 UVICORN_PID=$!
 echo "[STARTUP] uvicorn started (pid=$UVICORN_PID)"
 
-wait -n
+while true; do
+    if ! kill -0 "$SYNC_PID" 2>/dev/null; then
+        echo "[ERROR] sync_ratings.py exited"
+        break
+    fi
 
-echo "[ERROR] A child process exited"
+    if ! kill -0 "$QUEUE_PID" 2>/dev/null; then
+        echo "[ERROR] queue_worker.py exited"
+        break
+    fi
+
+    if ! kill -0 "$UVICORN_PID" 2>/dev/null; then
+        echo "[ERROR] uvicorn exited"
+        break
+    fi
+
+    sleep 1
+done
 
 for pid in $SYNC_PID $QUEUE_PID $UVICORN_PID; do
     if kill -0 "$pid" 2>/dev/null; then
