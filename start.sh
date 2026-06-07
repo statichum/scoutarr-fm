@@ -11,6 +11,16 @@ log "Starting Scoutarr..."
 log "Starting cron..."
 cron&
 
+echo    (
+echo     \
+echo      )
+echo ##-------->        Scoutarr.fm
+echo      )
+echo     /
+echo    (
+
+
+
 # -------------------------
 # CRON CHECK
 # -------------------------
@@ -51,11 +61,6 @@ log "[CRON CHECK] test execution complete"
 # Continue startup
 # -------------------------
 
-log "Running initial full sync..."
-python3 /app/src/sync_ratings.py &
-SYNC_PID=$!
-log "[STARTUP] sync_ratings.py started (pid=$SYNC_PID)"
-
 log "Starting queue worker..."
 python3 /app/src/queue_worker.py &
 QUEUE_PID=$!
@@ -67,11 +72,6 @@ UVICORN_PID=$!
 log "[STARTUP] uvicorn started (pid=$UVICORN_PID)"
 
 while true; do
-    if ! kill -0 "$SYNC_PID" 2>/dev/null; then
-        log "[ERROR] sync_ratings.py exited"
-        break
-    fi
-
     if ! kill -0 "$QUEUE_PID" 2>/dev/null; then
         log "[ERROR] queue_worker.py exited"
         break
@@ -85,7 +85,7 @@ while true; do
     sleep 1
 done
 
-for pid in $SYNC_PID $QUEUE_PID $UVICORN_PID; do
+for pid in $QUEUE_PID $UVICORN_PID; do
     if kill -0 "$pid" 2>/dev/null; then
         log "[STATUS] pid=$pid is still running"
     else
@@ -98,6 +98,6 @@ ps aux
 
 log "[SHUTDOWN] Terminating remaining processes..."
 
-kill $SYNC_PID $QUEUE_PID $UVICORN_PID 2>/dev/null || true
+kill $QUEUE_PID $UVICORN_PID 2>/dev/null || true
 
 wait || true
