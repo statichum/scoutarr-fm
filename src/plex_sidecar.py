@@ -7,6 +7,12 @@ import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
+from datetime import datetime
+
+def log(msg: str):
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
+
 import requests
 
 DEFAULT_THRESHOLD = 0.72
@@ -167,7 +173,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
 
     weekly = contract.get("weekly", {}).get("previous")
     if not weekly:
-        print("⚠ Plex: no previous week provided.")
+        log("⚠ Plex: no previous week provided.")
         return
 
     base = plex.get("plex-url")
@@ -176,7 +182,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     prefix = plex.get("pl-name", "ListenBrainz Weekly Explore")
 
     if not base or not token or not library:
-        print("✗ Plex config incomplete.")
+        log("✗ Plex config incomplete.")
         return
 
     machine = _plex_machine_id(base, token)
@@ -197,8 +203,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     ]
     matched = []
 
-    print(f"→ Creating Plex playlist: {title}")
-
+    log(f"→ Creating Plex playlist: {title}")
     for t in tracks:
         best, score = None, 0.0
         for h in _plex_search_track(base, token, section, t.title):
@@ -217,7 +222,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
             matched.append(best.rk)
 
     if not matched:
-        print("✗ Plex: no matched tracks.")
+        log("✗ Plex: no matched tracks.")
         return
 
     uri = f"server://{machine}/com.plexapp.plugins.library/library/metadata/" + ",".join(matched)
@@ -228,7 +233,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
         timeout=30,
     ).raise_for_status()
 
-    print(f"✓ Plex playlist created: {title}")
+    log(f"✓ Plex playlist created: {title}")
 
 
     retention = int(plex.get("pl-retention", 4))
@@ -256,7 +261,7 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     old = scoutarr_playlists[retention:]
 
     for _, p in old:
-        print(f"→ Removing old Plex playlist: {p['title']}")
+        log(f"→ Removing old Plex playlist: {p['title']}")
 
         _plex_delete_playlist(
             base,
@@ -264,4 +269,4 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
             p["ratingKey"]
         )
 
-        print(f"✓ Removed: {p['title']}")
+        log(f"✓ Removed: {p['title']}")

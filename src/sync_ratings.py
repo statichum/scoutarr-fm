@@ -3,10 +3,10 @@
 import requests
 import xml.etree.ElementTree as ET
 import yaml
-from datetime import datetime
 import time
 import os
 import argparse
+from datetime import datetime
 
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -25,9 +25,10 @@ def get_mb_sleep(mb_url):
 # -------------------------
 # Logging
 # -------------------------
-def log(msg):
-    print(msg, flush=True)
 
+def log(msg):
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
 
 def header(config_name):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -329,7 +330,7 @@ def process_track(t, score, label, headers, mb_url, username, stats):
     # -------------------------
     if not recording_mbid:
         stats["failed"] += 1
-        log("  → ❌ Could not resolve recording MBID\n")
+        log("  → ❌ Could not resolve recording MBID")
         return
 
     stats["resolved"] += 1
@@ -462,7 +463,7 @@ def get_tracks(plex_url, plex_token, section_id, rating):
 # Send feedback
 # -------------------------
 def send_feedback(tracks, score, label, headers, mb_url, username, stats):
-    log(f"\n--- Syncing {label} ({len(tracks)} tracks) ---\n")
+    log(f"--- Syncing {label} ({len(tracks)} tracks) ---")
 
 
     for t in tracks:
@@ -504,7 +505,7 @@ def run_config(config_path):
     log("Fetching ⭐ (hated) tracks from Plex...")
     one_star = get_tracks(plex_url, plex_token, section_id, 2)
 
-    log(f"\nFound {len(five_star)} loved tracks")
+    log(f"Found {len(five_star)} loved tracks")
     log(f"Found {len(one_star)} hated tracks")
 
     love_stats = {"total": 0, "resolved": 0, "failed": 0, "updated": 0}
@@ -513,23 +514,23 @@ def run_config(config_path):
     send_feedback(five_star, 1, "LOVE", headers, mb_url, username, love_stats)
     send_feedback(one_star, -1, "HATE", headers, mb_url, username, hate_stats)
 
-    log("\n==================== SUMMARY ====================")
-    log(f"Config: {name}\n")
+    log("==================== SUMMARY ====================")
+    log(f"Config: {name}")
 
     log("LOVE:")
     log(f"  Total tracks:        {love_stats['total']}")
     log(f"  MBID resolved:       {love_stats['resolved']}")
     log(f"  MBID failed:         {love_stats['failed']}")
-    log(f"  Updates sent:        {love_stats['updated']}\n")
+    log(f"  Updates sent:        {love_stats['updated']}")
 
     log("HATE:")
     log(f"  Total tracks:        {hate_stats['total']}")
     log(f"  MBID resolved:       {hate_stats['resolved']}")
     log(f"  MBID failed:         {hate_stats['failed']}")
-    log(f"  Updates sent:        {hate_stats['updated']}\n")
+    log(f"  Updates sent:        {hate_stats['updated']}")
 
-    log("=================================================\n")
-    log("Sync complete.\n")
+    log("=================================================")
+    log("Sync complete.")
 
 # -------------------------
 # Main
@@ -564,8 +565,8 @@ def main():
 
 
 def run_single(track_mbid, score, plex_user, artist, title):
-    log(f"\n=== SINGLE TRACK MODE ===")
-    log(f"Track MBID: {track_mbid}, Score: {score}\n")
+    log(f"=== SINGLE TRACK MODE ===")
+    log(f"Track MBID: {track_mbid}, Score: {score}")
 
     configs = list_config_files()
 
@@ -577,7 +578,7 @@ def run_single(track_mbid, score, plex_user, artist, title):
 
 
         name = os.path.basename(config_path)
-        log(f"\n--- Config: {name} ---")
+        log(f"--- Config: {name} ---")
 
 
         name = os.path.basename(config_path)
@@ -588,7 +589,7 @@ def run_single(track_mbid, score, plex_user, artist, title):
             log(f"[DEBUG] Skipping config {name} (user mismatch: {config_plex_user} != {plex_user})")
             continue
 
-        log(f"\n--- Config: {name} ---")
+        log(f"--- Config: {name} ---")
 
 
 

@@ -1,80 +1,84 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Starting Scoutarr..."
+log() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') $*"
+}
+
+log "Starting Scoutarr..."
 
 # Start cron
-echo "Starting cron..."
+log "Starting cron..."
 cron&
 
 # -------------------------
 # CRON CHECK
 # -------------------------
-echo "Running cron sanity check..."
+log "Running cron sanity check..."
 
 if ! pgrep cron > /dev/null; then
-  echo "[CRON CHECK] cron is NOT running"
+  log "[CRON CHECK] cron is NOT running"
   exit 1
 else
-  echo "[CRON CHECK] cron process is running"
+  log "[CRON CHECK] cron process is running"
 fi
 
 if [ ! -f /etc/cron.d/scoutarr ]; then
-  echo "[CRON CHECK] cron file missing"
+  log "[CRON CHECK] cron file missing"
   exit 1
 else
-  echo "[CRON CHECK] cron file exists"
+  log "[CRON CHECK] cron file exists"
 fi
 
 perm=$(stat -c "%a" /etc/cron.d/scoutarr)
 if [ "$perm" != "644" ]; then
-  echo "[CRON CHECK] cron file permissions incorrect ($perm)"
+  log "[CRON CHECK] cron file permissions incorrect ($perm)"
   exit 1
 else
-  echo "[CRON CHECK] cron file permissions OK (644)"
+  log "[CRON CHECK] cron file permissions OK (644)"
 fi
 
-echo "[CRON CHECK] Loaded jobs:"
+log "[CRON CHECK] Loaded jobs:"
 cat /etc/cron.d/scoutarr
 
-echo "[CRON CHECK] Running test job..."
+log "[CRON CHECK] Running test job..."
 python3 - <<EOF
 print("[CRON TEST] Python execution works")
 EOF
-echo "[CRON CHECK] test execution complete"
+log "[CRON CHECK] test execution complete"
 
 # -------------------------
 # Continue startup
 # -------------------------
 
-echo "Running initial full sync..."
+log "Running initial full sync..."
 python3 /app/src/sync_ratings.py &
 SYNC_PID=$!
-echo "[STARTUP] sync_ratings.py started (pid=$SYNC_PID)"
+log "[STARTUP] sync_ratings.py started (pid=$SYNC_PID)"
 
-echo "Starting queue worker..."
+log "Starting queue worker..."
 python3 /app/src/queue_worker.py &
 QUEUE_PID=$!
-echo "[STARTUP] queue_worker.py started (pid=$QUEUE_PID)"
+log "[STARTUP] queue_worker.py started (pid=$QUEUE_PID)"
 
-echo "Starting API..."
+log "Starting API..."
 uvicorn src.webhook:app --host 0.0.0.0 --port 8787 &
 UVICORN_PID=$!
-echo "[STARTUP] uvicorn started (pid=$UVICORN_PID)"
+log "[STARTUP] uvicorn started (pid=$UVICORN_PID)"
 
 while true; do
     if ! kill -0 "$SYNC_PID" 2>/dev/null; then
-        echo "[ERROR] sync_ratings.py exited"
+        log "[ERROR] sync_ratings.py exited"
         break
     fi
 
     if ! kill -0 "$QUEUE_PID" 2>/dev/null; then
-        echo "[ERROR] queue_worker.py exited"
+        log "[ERROR] queue_worker.py exited"
         break
     fi
 
     if ! kill -0 "$UVICORN_PID" 2>/dev/null; then
-        echo "[ERROR] uvicorn exited"
+        log "[ERROR] uvicorn exited"
         break
     fi
 
@@ -83,16 +87,16 @@ done
 
 for pid in $SYNC_PID $QUEUE_PID $UVICORN_PID; do
     if kill -0 "$pid" 2>/dev/null; then
-        echo "[STATUS] pid=$pid is still running"
+        log "[STATUS] pid=$pid is still running"
     else
-        echo "[STATUS] pid=$pid has exited"
+        log "[STATUS] pid=$pid has exited"
     fi
 done
 
-echo "[PROCESS LIST]"
+log "[PROCESS LIST]"
 ps aux
 
-echo "[SHUTDOWN] Terminating remaining processes..."
+log "[SHUTDOWN] Terminating remaining processes..."
 
 kill $SYNC_PID $QUEUE_PID $UVICORN_PID 2>/dev/null || true
 

@@ -2,6 +2,13 @@ import time
 import subprocess
 import os
 
+from datetime import datetime
+
+def log(msg: str):
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
+
+
 QUEUE_FILE = "/tmp/scoutarr.queue"
 
 open(QUEUE_FILE, "a").close()
@@ -28,7 +35,7 @@ while True:
         if len(parts) >= 5:
             artist = parts[3]
             title = parts[4]
-        print(f"[QUEUE WORKER] Processing: {mbid} ({score}) [{plex_user}]", flush=True)
+        log(f"[QUEUE WORKER] Processing: {mbid} ({score}) [{plex_user}]")
 
         subprocess.run([
             "python3",

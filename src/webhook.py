@@ -4,7 +4,11 @@ import json
 
 QUEUE_FILE = "/tmp/scoutarr.queue"
 app = FastAPI()
-logging.basicConfig(level=logging.INFO)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s"
+)
 
 
 @app.post("/webhook")

@@ -3,9 +3,11 @@ import requests
 from typing import Dict, Any
 
 
-def log(msg: str):
-    print(msg, flush=True)
+from datetime import datetime
 
+def log(msg: str):
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
 
 def fmt_sources(sources) -> str:
     return "+".join(sorted(list(sources))) if sources else "unknown"

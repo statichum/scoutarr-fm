@@ -1,9 +1,12 @@
 import time
 import requests
-from datetime import datetime
 from typing import Dict, Any, List, Optional
-import functools
-print = functools.partial(print, flush=True)
+
+from datetime import datetime
+
+def log(msg: str):
+    ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    print(f"{ts} {msg}", flush=True)
 
 LB_CF_RECORDING = "https://api.listenbrainz.org/1/cf/recommendation/user"
 LB_CREATED_FOR = "https://api.listenbrainz.org/1/user/{user}/playlists/createdfor"
@@ -38,10 +41,10 @@ def lb_get_with_backoff(
 
     for attempt, delay in enumerate(attempts, start=1):
         if delay > 0:
-            print(f"ListenBrainz retry {attempt - 1}, sleeping {delay}s...")
+            log(f"ListenBrainz retry {attempt - 1}, sleeping {delay}s...")
             time.sleep(delay)
 
-        print(f"→ ListenBrainz attempt {attempt}: GET {url}")
+        log(f"→ ListenBrainz attempt {attempt}: GET {url}")
 
         try:
             r = requests.get(
@@ -53,26 +56,26 @@ def lb_get_with_backoff(
 
             # Success
             if r.status_code < 400:
-                print(f"ListenBrainz success ({r.status_code})")
+                log(f"ListenBrainz success ({r.status_code})")
                 return r
 
             if r.status_code in (429, 500, 502, 503, 504):
                 last_error = RuntimeError(f"HTTP {r.status_code}")
-                print(f"ListenBrainz HTTP {r.status_code}, will retry")
+                    log(f"✗ ListenBrainz HTTP {r.status_code}, will retry")
                 continue
 
-            print(f"✗ ListenBrainz HTTP {r.status_code}, not retryable")
+            log(f"✗ ListenBrainz HTTP {r.status_code}, not retryable")
             r.raise_for_status()
 
 
         except requests.exceptions.HTTPError as e:
             status = e.response.status_code if e.response else "unknown"
-            print(f"✗ ListenBrainz HTTP {status}, not retryable")
+            log(f"✗ ListenBrainz HTTP {status}, not retryable")
             raise
 
         except requests.exceptions.RequestException as e:
             last_error = e
-            print(f"⚠ ListenBrainz request error: {type(e).__name__}: {e}")
+            log(f"⚠ ListenBrainz request error: {type(e).__name__}: {e}")
             continue
 
 
