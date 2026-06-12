@@ -61,7 +61,7 @@ def lb_get_with_backoff(
 
             if r.status_code in (429, 500, 502, 503, 504):
                 last_error = RuntimeError(f"HTTP {r.status_code}")
-                    log(f"✗ ListenBrainz HTTP {r.status_code}, will retry")
+                log(f"✗ ListenBrainz HTTP {r.status_code}, will retry")
                 continue
 
             log(f"✗ ListenBrainz HTTP {r.status_code}, not retryable")
