@@ -80,19 +80,16 @@ Set your Scputarr url here:
 
 # 4.0 First run
 
-On first run, Scoutarr will sync all ratings with Listenbrainz, run it using compose up and watch the output for issues
-This will take some time to complete.
-
 ```
 docker compose up
 ```
 
-Any new/changed ratings are synced on the fly from webhooks.
+Run initial playlist reation, and artist check
 
-Cron inside the container runs two things:
-- Full ratings sync weekly at 3am on Sundays to ensure all tracks are synced correctly.
-- Listenbrainz recommmendations loop to insert artists into Lidarr and create playlists, this is run weekly on Tuesdays at 3am (Listenbrainz cretes weekly explore playlists on early on Monday of your selected timezone but I've noticed some days LB glitches and things run later than expected - running on Tuesday is much safer.) 
-
+```
+docker exec -it scoutarr-fm python3 /app/src/scoutarr.py
+```
+Cron inside the container runs this every 3 hours to check for new artists and playlists
 
 
 ---
