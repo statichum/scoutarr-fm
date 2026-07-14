@@ -123,6 +123,7 @@ def _plex_playlists(base, token):
         out.append({
             "ratingKey": p.attrib.get("ratingKey"),
             "title": p.attrib.get("title", ""),
+            "addedAt": int(p.attrib.get("addedAt", "0")),
         })
 
     return out
@@ -188,10 +189,8 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
     machine = _plex_machine_id(base, token)
     section = _plex_section_id(base, token, library)
 
-    year, week = weekly["week_id"].split("-")
-    title = f"{prefix} {week} {year}"
-
-
+    today = datetime.now().strftime("%d/%m")
+    title = f"{prefix} {today}"
 
     tracks = [
         LBTrack(
@@ -240,27 +239,20 @@ def plex_run_playlists(cfg: Dict, contract: Dict, user_agent: str = "") -> None:
 
     playlists = _plex_playlists(base, token)
 
-    scoutarr_playlists = []
 
-    for p in playlists:
-        if not p["title"].startswith(prefix):
-            continue
-
-        key = _playlist_week_sort_key(p["title"])
-
-        if not key:
-            continue
-
-        scoutarr_playlists.append((key, p))
+    scoutarr_playlists = [
+        p for p in playlists
+        if p["title"].startswith(prefix)
+    ]
 
     scoutarr_playlists.sort(
-        key=lambda x: x[0],
+        key=lambda p: p["addedAt"],
         reverse=True
     )
 
     old = scoutarr_playlists[retention:]
 
-    for _, p in old:
+    for p in old:
         log(f"→ Removing old Plex playlist: {p['title']}")
 
         _plex_delete_playlist(

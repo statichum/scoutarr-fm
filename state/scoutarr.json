@@ -33,21 +33,66 @@
         "week_id": "2026-W24",
         "title": "Weekly Exploration for chris41304130, week of 2026-06-11 Thu",
         "imported_to_lidarr": true,
-        "plex_created": false,
+        "plex_created": true,
         "first_seen": "2026-06-11T10:46:58.940646+00:00"
+      },
+      "3a019dea-468d-490d-873e-4f685940ebd6": {
+        "week_id": "2026-W25",
+        "title": "Weekly Exploration for chris41304130, week of 2026-06-15 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-14T12:05:14.611532+00:00"
+      },
+      "ef15f468-ce7e-4579-8551-e769effbc491": {
+        "week_id": "2026-W26",
+        "title": "Weekly Exploration for chris41304130, week of 2026-06-22 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-21T13:57:20.871846+00:00"
+      },
+      "df640157-62af-44e0-8e32-076d5903485d": {
+        "week_id": "2026-W27",
+        "title": "Weekly Exploration for chris41304130, week of 2026-06-29 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-28T13:23:39.213609+00:00"
+      },
+      "bebc7f9d-8aa5-4c2c-b91a-36fa4962796a": {
+        "week_id": "2026-W28",
+        "title": "Weekly Exploration for chris41304130, week of 2026-07-07 Tue",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-07-07T21:16:33.719128+00:00"
+      },
+      "fda8fec3-1f3e-47bf-829d-4e412ce052d0": {
+        "week_id": "2026-W29",
+        "title": "Weekly Exploration for chris41304130, week of 2026-07-13 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-07-12T17:50:08.015740+00:00"
       }
     },
     "created_plex_weeks": [
       "2026-W19",
       "2026-W20",
       "2026-W22",
-      "2026-W23"
+      "2026-W23",
+      "2026-W24",
+      "2026-W25",
+      "2026-W26",
+      "2026-W27",
+      "2026-W28"
     ],
     "imported_lidarr_weeks": [
       "2026-W20",
       "2026-W22",
       "2026-W23",
-      "2026-W24"
+      "2026-W24",
+      "2026-W25",
+      "2026-W26",
+      "2026-W27",
+      "2026-W28",
+      "2026-W29"
     ]
   },
   "steve16974": {
@@ -84,21 +129,66 @@
         "week_id": "2026-W24",
         "title": "Weekly Exploration for steve16974, week of 2026-06-11 Thu",
         "imported_to_lidarr": true,
-        "plex_created": false,
+        "plex_created": true,
         "first_seen": "2026-06-11T10:47:00.940160+00:00"
+      },
+      "e549d44c-71b7-46ca-9371-b6b8432e98a4": {
+        "week_id": "2026-W25",
+        "title": "Weekly Exploration for steve16974, week of 2026-06-15 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-14T12:05:14.611532+00:00"
+      },
+      "bf0a5755-bafc-41d5-8d57-a2281f2d1bcc": {
+        "week_id": "2026-W26",
+        "title": "Weekly Exploration for steve16974, week of 2026-06-22 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-21T13:57:20.871846+00:00"
+      },
+      "31c87c80-e337-4057-81c7-176c0c475808": {
+        "week_id": "2026-W27",
+        "title": "Weekly Exploration for steve16974, week of 2026-06-29 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-06-28T13:23:39.213609+00:00"
+      },
+      "b58ae0a6-64a2-45a8-a806-92cbbdbab92b": {
+        "week_id": "2026-W28",
+        "title": "Weekly Exploration for steve16974, week of 2026-07-07 Tue",
+        "imported_to_lidarr": true,
+        "plex_created": true,
+        "first_seen": "2026-07-07T21:16:33.719128+00:00"
+      },
+      "2f92b354-c65f-4be8-9654-6041346185ce": {
+        "week_id": "2026-W29",
+        "title": "Weekly Exploration for steve16974, week of 2026-07-13 Mon",
+        "imported_to_lidarr": true,
+        "plex_created": false,
+        "first_seen": "2026-07-12T17:50:08.015740+00:00"
       }
     },
     "created_plex_weeks": [
       "2026-W19",
       "2026-W20",
       "2026-W22",
-      "2026-W23"
+      "2026-W23",
+      "2026-W24",
+      "2026-W25",
+      "2026-W26",
+      "2026-W27",
+      "2026-W28"
     ],
     "imported_lidarr_weeks": [
       "2026-W20",
       "2026-W22",
       "2026-W23",
-      "2026-W24"
+      "2026-W24",
+      "2026-W25",
+      "2026-W26",
+      "2026-W27",
+      "2026-W28",
+      "2026-W29"
     ]
   }
 }
